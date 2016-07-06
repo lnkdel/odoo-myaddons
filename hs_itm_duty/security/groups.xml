@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="group_itm_duty_user" model="res.groups">
+            <field name="name">ITM Duty User</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_itm.group_itm_user'))]"/>
+            <field name="comment">The user will be able to manage self duty records, view others' duty records.</field>
+        </record>
+
+        <record id="group_itm_duty_manager" model="res.groups">
+            <field name="name">ITM Duty Manager</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('group_itm_duty_user'))]"/>
+            <field name="comment">The user will be able to manage all duty records.</field>
+        </record>
+    </data>
+</odoo>
+

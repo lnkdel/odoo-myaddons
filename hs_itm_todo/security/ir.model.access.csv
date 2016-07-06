@@ -1,0 +1,13 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+task_group_itm_todo_user,task hs_itm_todo.group_itm_todo_user,model_hs_itm_todo_task,hs_itm_todo.group_itm_todo_user,1,1,1,1
+task_group_itm_todo_manager,task hs_itm_todo.group_itm_todo_manager,model_hs_itm_todo_task,hs_itm_todo.group_itm_todo_manager,1,1,1,1
+
+category_group_itm_todo_user,category hs_itm_todo.group_itm_todo_user,model_hs_itm_todo_category,hs_itm_todo.group_itm_todo_user,1,0,0,0
+category_group_itm_todo_manager,category hs_itm_todo.group_itm_todo_manager,model_hs_itm_todo_category,hs_itm_todo.group_itm_todo_manager,1,1,1,1
+
+note_group_itm_todo_user,note hs_itm_todo.group_itm_todo_user,model_hs_itm_todo_note,hs_itm_todo.group_itm_todo_user,1,1,1,1
+note_group_itm_todo_manager,note hs_itm_todo.group_itm_todo_manager,model_hs_itm_todo_note,hs_itm_todo.group_itm_todo_manager,1,1,1,1
+
+hour_group_itm_todo_user,hour hs_itm_todo.group_itm_todo_user,model_hs_itm_todo_hour,hs_itm_todo.group_itm_todo_user,1,1,1,1
+hour_group_itm_todo_manager,hour hs_itm_todo.group_itm_todo_manager,model_hs_itm_todo_hour,hs_itm_todo.group_itm_todo_manager,1,1,1,1

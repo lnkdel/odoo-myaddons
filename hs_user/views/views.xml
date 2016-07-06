@@ -1,0 +1,52 @@
+<openerp>
+    <data>
+        <menuitem name="User" id="hs_user_menu"  groups="base.group_erp_manager"/>
+
+        <menuitem id="hs_user_par_menu" name="HS User" parent="hs_user_menu" sequence="1"/>
+
+        <record id="user_change_password_wizard_view" model="ir.ui.view">
+            <field name="name">Change Password</field>
+            <field name="model">hs_user.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Change Password">
+                    <field name="new_passwd"/>
+                    <field name="user_ids" />
+                    <footer>
+                        <button string="Change Password" name="change_password_button" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="hs_user_tree" model="ir.ui.view" >
+            <field name="name">HS User Tree</field>
+            <field name="model">res.users</field>
+            <!--<field name="inherit_id" ref="res_users.change_password_wizard_user_tree_view"/>-->
+            <field name="arch" type="xml">
+                <tree create="false" string="Users">
+                        <field name="id"/>
+                        <field name="name"/>
+                        <field name="login"/>
+                    </tree>
+            </field>
+        </record>
+
+        <record id="hs_user_change_password_action" model="ir.actions.act_window">
+            <field name="name">HS User</field>
+            <field name="res_model">res.users</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <act_window id="hs_user_change_password_wizard_action"
+            name="Change Password (batch)"
+            src_model="res.users"
+            res_model="hs_user.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new" groups="base.group_erp_manager"/>
+
+        <menuitem id="hs_user_change_password_menu" name="Change Password"
+                  parent="hs_user_par_menu" action="hs_user_change_password_action"
+                  sequence="3"/>
+    </data>
+</openerp>

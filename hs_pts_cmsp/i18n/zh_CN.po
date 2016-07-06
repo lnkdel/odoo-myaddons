@@ -1,0 +1,1785 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hs_pts_cmsp
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-29 01:59+0000\n"
+"PO-Revision-Date: 2016-06-29 01:59+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_needaction
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_needaction
+msgid "Action Needed"
+msgstr "所需行动"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_active
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_active
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_active
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_active
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_active
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_active
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_active
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_active
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_active
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_active
+msgid "Active?"
+msgstr "有效？"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_amount
+msgid "Amount"
+msgstr "数量"
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.fabricroll:0
+msgid "Another fabric roll already exists with this barcode_no!"
+msgstr "Another fabric roll already exists with this barcode_no!"
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.plan:0
+msgid "Another plan already exists with this planno!"
+msgstr "Another plan already exists with this planno!"
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.prepregroll:0
+msgid "Another prepreg roll already exists with this barcode_no!"
+msgstr "Another prepreg roll already exists with this barcode_no!"
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.productmodel:0
+msgid "Another product model already exists with this Product No.!"
+msgstr "该编号已经存在!"
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.qualitylevel:0
+msgid "Another quality level already exists with this name!"
+msgstr "该等级已经存在!"
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.fabricshiftreport_item:0
+msgid "Another record already exists with this report!"
+msgstr "该记录已存在!"
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.fabricshiftreport_main:0
+msgid "Another record already exists with this workunit, workdate, workshift!"
+msgstr "已存在同样机台、日期及班次的记录!"
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.resinlot:0
+msgid "Another resin pail already exists with this barcode_no!"
+msgstr "Another resin pail already exists with this barcode_no!"
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.sizinglot:0
+msgid "Another sizing lot already exists with this barcode_no!"
+msgstr "Another sizing lot already exists with this barcode_no!"
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.workgroup:0
+msgid "Another work group already exists with this name!"
+msgstr "该班组已经存在!"
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.workfloor:0
+msgid "Another workfloor already exists with this name!"
+msgstr "该车间已经存在!"
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.workunit:0
+msgid "Another workunit already exists with this name!"
+msgstr "该机台已经存在!"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.productmodel_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.qualitylevel_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workfloor_view_filter
+msgid "Archived"
+msgstr "归档"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_area
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_area
+msgid "Area"
+msgstr "面积"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.fabric.storage.wizard,operate:0
+#: selection:hs_pts.cmsp.prepreg.storage.wizard,operate:0
+#: selection:hs_pts.cmsp.resin.storage.wizard,operate:0
+#: selection:hs_pts.cmsp.sizing.storage.wizard,operate:0
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_fabric_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_fabricsetquality_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_fabricstorage_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_prepreg_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_prepregsetquality_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_prepregstorage_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_resin_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_resinsetquality_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_resinstorage_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_sizing_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_sizingsetquality_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_sizingstorage_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_form
+msgid "Cancel"
+msgstr "取消"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,state:0
+msgid "Cancelled"
+msgstr "取消"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,production_type:0
+msgid "Civilian"
+msgstr "民用"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_complete_date
+msgid "Complete Date"
+msgstr "完成日期"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_fabricshiftreport_report_wizard
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_fabricstorage_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_prepregstorage_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_resinstorage_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_sizingstorage_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_form
+msgid "Confirm"
+msgstr "确认"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_sq_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_storage_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_report_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_sq_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_storage_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_sq_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_storage_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_sq_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_storage_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_create_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_create_uid
+msgid "Created by"
+msgstr "创建者"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_sq_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_storage_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_report_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_sq_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_storage_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_sq_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_storage_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_sq_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_storage_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_wizard_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_create_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricroll_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.prepreg_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.resin_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.sizing_view_filter
+msgid "Current Month"
+msgstr "本月"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_iscutting
+msgid "Cutting?"
+msgstr "是否裁边"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_task_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_last_post
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "发布到记录上的最后消息的日期"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_sq_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_storage_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_report_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_sq_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_storage_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_sq_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_storage_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_sq_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_storage_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_wizard_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_display_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,state:0
+msgid "Doc Preparation"
+msgstr "工艺文件准备"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+msgid "Doc Prepare"
+msgstr "工艺文件准备"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,state:0
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+msgid "Draft"
+msgstr "草稿"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_employee_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_employee_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_employee_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_employee_id
+msgid "Employee"
+msgstr "员工"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_report_wizard_endtime
+msgid "End Time"
+msgstr "结束时间"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_display_runningtime
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_display_runningtime
+msgid "Eq. Running"
+msgstr "设备运行时间"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_running_time
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_running_time
+msgid "Eq. Running (min)"
+msgstr "设备运行时间 (min)"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.hs_pts_cmsp_fabric_wizard_action
+#: model:ir.actions.act_window,name:hs_pts_cmsp.hs_pts_cmsp_prepreg_wizard_action
+#: model:ir.actions.act_window,name:hs_pts_cmsp.hs_pts_cmsp_resin_wizard_action
+#: model:ir.actions.act_window,name:hs_pts_cmsp.hs_pts_cmsp_sizing_wizard_action
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_fabric_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_prepreg_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_resin_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_sizing_wizard_view
+msgid "Export XLS"
+msgstr "生成入库单"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,product_type:0
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.productmodel_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.task_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroup_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroupitem_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workunit_view_filter
+msgid "Fabric"
+msgstr "织物"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_fabricroll
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricroll_view_form
+msgid "Fabric Roll"
+msgstr "织物卷"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.fabricroll_action
+#: model:ir.ui.menu,name:hs_pts_cmsp.fabric_menu
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricroll_view_filter
+msgid "Fabric Rolls"
+msgstr "织物卷"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_fabricshiftreport
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_fabricshiftreport_main
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_main_record_view_calendar
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_record_view_calendar
+msgid "Fabric Shift Report"
+msgstr "织物日报"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.menu,name:hs_pts_cmsp.fabricshiftreport_wizard_menu
+msgid "Fabric Shift Report Generate Wizard"
+msgstr "织物日报生成"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_fabricshiftreport_item
+msgid "Fabric Shift Report Item"
+msgstr "明细"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.menu,name:hs_pts_cmsp.fabricshiftreport_main_menu
+msgid "Fabric Work Data Input"
+msgstr "织物工作数据录入"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.report.xml,name:hs_pts_cmsp.cmsp_fabricroll
+msgid "FabricLabel"
+msgstr "织物标签"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_sq_wizard_fabric_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_storage_wizard_fabric_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_wizard_fabric_ids
+msgid "FabricRoll"
+msgstr "织物卷"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_form
+msgid "Finished"
+msgstr "生产完成"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_follower_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_follower_ids
+msgid "Followers"
+msgstr "关注者"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_channel_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "关注者(频道)"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_partner_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "关注者（合作伙伴）"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_full_name
+msgid "Full Name"
+msgstr "全名"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricroll_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.prepreg_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.resin_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.sizing_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.task_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroup_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroupitem_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workunit_view_filter
+msgid "Group By"
+msgstr "分组"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_sq_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_storage_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_report_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_sq_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_storage_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_sq_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_storage_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_sq_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_storage_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_wizard_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_id
+msgid "ID"
+msgstr "编号"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_task_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_unread
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_unread
+msgid "If checked new messages require your attention."
+msgstr "查看是否有需要留意的新信息。"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_task_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_needaction
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "确认后, 会出现新消息."
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_inspect_length
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_inspect_length
+msgid "Inspect（m）"
+msgstr "送检（m）"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_is_follower
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_is_follower
+msgid "Is Follower"
+msgstr "是否关注者"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_groupitem_ids
+msgid "Items"
+msgstr "成员"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_last_post
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_last_post
+msgid "Last Message Date"
+msgstr "最后消息日期"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_sq_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_storage_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_report_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_sq_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_storage_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_sq_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_storage_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_sq_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_storage_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_wizard___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem___last_update
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_sq_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_storage_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_report_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_sq_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_storage_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_sq_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_storage_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_sq_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_storage_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_write_uid
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_write_uid
+msgid "Last Updated by"
+msgstr "最后更新者"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_sq_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_storage_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_report_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_sq_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_storage_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_sq_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_storage_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_sq_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_storage_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_wizard_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_write_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_write_date
+msgid "Last Updated on"
+msgstr "最近更新时间"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_roll_length
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_roll_length
+msgid "Length"
+msgstr "长度"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_lot_no
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_lot_no
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_lot_no
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_lot_no
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_lot
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricroll_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.prepreg_view_filter
+msgid "Lot No."
+msgstr "批次号"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_manager
+msgid "Manager"
+msgstr "车间主任"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.menu,name:hs_pts_cmsp.cmsp_Manufacturing_management_menu
+msgid "Manufacturing"
+msgstr "生产"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_materiel_name
+msgid "Materiel Name"
+msgstr "物料名称"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_ids
+msgid "Messages"
+msgstr "消息"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.fabricshiftreport,workshift:0
+#: selection:hs_pts.cmsp.fabricshiftreport_main,workshift:0
+#: selection:hs_pts.cmsp.task,workshift:0
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_main_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_view_filter
+msgid "Middle Shift"
+msgstr "中班"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,production_type:0
+msgid "Military"
+msgstr "军用"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_model_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_model_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_model_id
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricroll_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.prepreg_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.resin_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.sizing_view_filter
+msgid "Model"
+msgstr "型号"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.fabricshiftreport,workshift:0
+#: selection:hs_pts.cmsp.fabricshiftreport_main,workshift:0
+#: selection:hs_pts.cmsp.task,workshift:0
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_main_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_view_filter
+msgid "Morning Shift"
+msgstr "早班"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_name
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_name
+msgid "Name"
+msgstr "名称"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.productmodel,packing:0
+msgid "Neutral"
+msgstr "中性"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_form
+msgid "Next Step"
+msgstr "下一步"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.fabricshiftreport,workshift:0
+#: selection:hs_pts.cmsp.fabricshiftreport_main,workshift:0
+#: selection:hs_pts.cmsp.task,workshift:0
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_main_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_view_filter
+msgid "Night Shift"
+msgstr "晚班"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_barcode_no
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_barcode_no
+msgid "No."
+msgstr "编号"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_notice_no
+msgid "Notice No."
+msgstr "生产通知单号"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_needaction_counter
+msgid "Number of Actions"
+msgstr "动作的序列号"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_task_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_needaction_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "需要动作的消息编号"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_task_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_unread_counter
+#: model:ir.model.fields,help:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_unread_counter
+msgid "Number of unread messages"
+msgstr "未读的消息数量"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_output_length
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_output_length
+msgid "Output（m）"
+msgstr "生产量（m）"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_docprepare
+msgid "PTS CMSP Doc Prepare"
+msgstr "PTS CMSP Doc Prepare"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_fabricshiftreportwriter
+msgid "PTS CMSP Fabric Shift Report Writer"
+msgstr "PTS CMSP Fabric Shift Report Writer"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_manager
+msgid "PTS CMSP Manager"
+msgstr "PTS CMSP 管理员"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_planner
+msgid "PTS CMSP Planner"
+msgstr "PTS CMSP 计划员"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_processconfirm
+msgid "PTS CMSP Process Confirm"
+msgstr "PTS CMSP Process Confirm"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_production_staff
+msgid "PTS CMSP Production Staff"
+msgstr "PTS CMSP 车间主任"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_production_staff_fabric
+msgid "PTS CMSP Production Staff for fabric"
+msgstr "PTS CMSP Production Staff for fabric"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_production_staff_prepreg
+msgid "PTS CMSP Production Staff for prepreg"
+msgstr "PTS CMSP Production Staff for prepreg"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_production_staff_resin
+msgid "PTS CMSP Production Staff for resin"
+msgstr "PTS CMSP Production Staff for resin"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_production_staff_sizing
+msgid "PTS CMSP Production Staff for sizing"
+msgstr "PTS CMSP Production Staff for sizing"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_production_director_fabric
+msgid "PTS CMSP Production director for fabric"
+msgstr "PTS CMSP Production director for fabric"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_production_director_prepreg
+msgid "PTS CMSP Production director for prepreg"
+msgstr "PTS CMSP Production director for prepreg"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_production_director_resin
+msgid "PTS CMSP Production director for resin"
+msgstr "PTS CMSP Production director for resin"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,name:hs_pts_cmsp.group_pts_cmsp_production_director_sizing
+msgid "PTS CMSP Production director for sizing"
+msgstr "PTS CMSP Production director for sizing"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_packing
+msgid "Packing"
+msgstr "包装要求"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.plan_action
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_plan_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_plan_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_plan_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_plan_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_plan_id
+#: model:ir.ui.menu,name:hs_pts_cmsp.plan_menu
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_form
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.task_view_filter
+msgid "Plan"
+msgstr "计划"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_planner
+msgid "Planner"
+msgstr "计划员"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.menu,name:hs_pts_cmsp.cmsp_Planning_management_menu
+msgid "Planning"
+msgstr "计划"
+
+#. module: hs_pts_cmsp
+#: code:addons/hs_pts_cmsp/models/models.py:832
+#, python-format
+msgid "Please select the plan for fabric."
+msgstr "请先选择一个织物生产计划."
+
+#. module: hs_pts_cmsp
+#: code:addons/hs_pts_cmsp/models/models.py:647
+#, python-format
+msgid "Please select the plan for prepreg."
+msgstr "请先选择一个预浸料生产计划."
+
+#. module: hs_pts_cmsp
+#: code:addons/hs_pts_cmsp/models/models.py:1008
+#, python-format
+msgid "Please select the plan for resin."
+msgstr "请先选择一个树脂生产计划."
+
+#. module: hs_pts_cmsp
+#: code:addons/hs_pts_cmsp/models/models.py:73
+#, python-format
+msgid "Please select the process program."
+msgstr "请先设置工艺方案."
+
+#. module: hs_pts_cmsp
+#: code:addons/hs_pts_cmsp/models/models.py:1184
+#, python-format
+msgid "Please set the plan for sizing."
+msgstr "请先选择一个上浆剂生产计划."
+
+#. module: hs_pts_cmsp
+#: code:addons/hs_pts_cmsp/models/models.py:84
+#, python-format
+msgid "Please set the production task."
+msgstr "请先设置生产任务."
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,product_type:0
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.productmodel_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.task_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroup_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroupitem_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workunit_view_filter
+msgid "Prepreg"
+msgstr "预浸料"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_prepregroll
+msgid "Prepreg Roll"
+msgstr "预浸料卷"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.prepreg_action
+#: model:ir.ui.menu,name:hs_pts_cmsp.prepreg_menu
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.prepreg_view_filter
+msgid "Prepreg Rolls"
+msgstr "预浸料卷"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.report.xml,name:hs_pts_cmsp.cmsp_prepregroll
+msgid "PrepregLabel"
+msgstr "预浸料标签"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_sq_wizard_prepreg_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_storage_wizard_prepreg_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_wizard_prepreg_ids
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.prepreg_view_form
+msgid "PrepregRoll"
+msgstr "预浸料卷"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_priority
+msgid "Priority"
+msgstr "优先级"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+msgid "Process Confirm"
+msgstr "工艺方案确定"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_processprogram
+msgid "Process Program"
+msgstr "工艺方案"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,state:0
+msgid "Process Selection"
+msgstr "工艺方案确定"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.productmodel_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.productmodel_view_form
+msgid "Product"
+msgstr "产品"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_productmodel
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_model_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_model_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_model_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_model_id
+#: model:ir.ui.menu,name:hs_pts_cmsp.cmsp_productmodel_menu
+msgid "Product Model"
+msgstr "产品型号"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_product_no
+msgid "Product No."
+msgstr "产品编码"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_plan
+msgid "Product Plan"
+msgstr "生产计划"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_task
+msgid "Product Task"
+msgstr "生产任务"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_product_type
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+msgid "Product Type"
+msgstr "产品类型"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_form
+msgid "Production"
+msgstr "生产"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_product_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_product_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_product_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_product_date
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricroll_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.prepreg_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.resin_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.sizing_view_filter
+msgid "Production Date"
+msgstr "生产日期"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_production_type
+msgid "Production Type"
+msgstr "生产类型"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,production_type:0
+msgid "Project"
+msgstr "项目"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.qualitylevel_action
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_qualitylevel
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabric_sq_wizard_qualitylevel
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_qualitylevel
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepreg_sq_wizard_qualitylevel
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_qualitylevel
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_sq_wizard_qualitylevel
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_qualitylevel
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_sq_wizard_qualitylevel
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_qualitylevel
+#: model:ir.ui.menu,name:hs_pts_cmsp.qualitylevel_menu
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricroll_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.prepreg_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.qualitylevel_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.qualitylevel_view_form
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.resin_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.sizing_view_filter
+msgid "Quality Level"
+msgstr "质量等级"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_form
+msgid "Refuse"
+msgstr "拒绝"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_reject_length
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_reject_length
+msgid "Reject（m）"
+msgstr "废布（m）"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_remark
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_remark
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_remark
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_remark
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_remark
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_remark
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_remark
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_remark
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_remark
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_remark
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_remark
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_remark
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_remark
+msgid "Remark"
+msgstr "备注"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_item_ids
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_main_view_form
+msgid "Report Items"
+msgstr "明细"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,product_type:0
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.productmodel_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.task_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroup_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroupitem_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workunit_view_filter
+msgid "Resin"
+msgstr "树脂"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_resinlot
+msgid "Resin Lot"
+msgstr "树脂批"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.report.xml,name:hs_pts_cmsp.cmsp_resinlot
+msgid "ResinLabel"
+msgstr "树脂标签"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.resin_action
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_sq_wizard_resin_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_storage_wizard_resin_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resin_wizard_resin_ids
+#: model:ir.ui.menu,name:hs_pts_cmsp.resin_menu
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.resin_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.resin_view_form
+msgid "ResinLot"
+msgstr "树脂批"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_barcode_no
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_barcode_no
+msgid "Roll No."
+msgstr "卷号"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_rolling_number
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_rolling_number
+msgid "Rolling Number"
+msgstr "收卷卷号"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_sequence
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_sequence
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_sequence
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_sequence
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_sequence
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_sequence
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_sequence
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_sequence
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_sequence
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_sequence
+msgid "Sequence"
+msgstr "序号"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.hs_pts_cmsp_fabricbatchsetquality_wizard_action
+#: model:ir.actions.act_window,name:hs_pts_cmsp.hs_pts_cmsp_prepregbatchsetquality_wizard_action
+#: model:ir.actions.act_window,name:hs_pts_cmsp.hs_pts_cmsp_resinbatchsetquality_wizard_action
+#: model:ir.actions.act_window,name:hs_pts_cmsp.hs_pts_cmsp_sizingbatchsetquality_wizard_action
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_fabricsetquality_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_prepregsetquality_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_resinsetquality_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_sizingsetquality_wizard_view
+msgid "Set Quality Level"
+msgstr "设置质量等级"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.menu,name:hs_pts_cmsp.setting_menu
+msgid "Settings"
+msgstr "设置"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_shelflife
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_shelflife
+msgid "Shelf Life (year)"
+msgstr "保质期 (年)"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_report_id
+#: model:ir.ui.menu,name:hs_pts_cmsp.cmsp_Report_management_menu
+msgid "Shift Report"
+msgstr "日报"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.productmodel,packing:0
+msgid "Simpleness"
+msgstr "简易"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,product_type:0
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.productmodel_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.sizing_view_form
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.task_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroup_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroupitem_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workunit_view_filter
+msgid "Sizing"
+msgstr "上浆剂"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.sizing_action
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_sizinglot
+msgid "Sizing Lot"
+msgstr "上浆剂批"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.report.xml,name:hs_pts_cmsp.cmsp_sizinglot
+msgid "SizingLabel"
+msgstr "上浆剂标签"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_sq_wizard_sizing_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_storage_wizard_sizing_ids
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizing_wizard_sizing_ids
+#: model:ir.ui.menu,name:hs_pts_cmsp.sizing_menu
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.sizing_view_filter
+msgid "SizingLot"
+msgstr "上浆剂批"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_slitter_weight
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_slitter_weight
+msgid "Slitter edge yarn（kg)"
+msgstr "废边纱（kg)"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_content
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_content
+msgid "Solid Content"
+msgstr "固含量"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.productmodel,packing:0
+msgid "Standard"
+msgstr "标准"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_start_date
+msgid "Start"
+msgstr "开始"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_report_wizard_starttime
+msgid "Start Time"
+msgstr "开始日期"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_state
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+msgid "State"
+msgstr "状态"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,production_type:0
+msgid "Stock"
+msgstr "备货"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_stock_time
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_stock_time
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_stock_time
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_stock_time
+msgid "Stock Time"
+msgstr "入库时间"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.fabric.storage.wizard,operate:0
+#: selection:hs_pts.cmsp.prepreg.storage.wizard,operate:0
+#: selection:hs_pts.cmsp.resin.storage.wizard,operate:0
+#: selection:hs_pts.cmsp.sizing.storage.wizard,operate:0
+#: model:ir.actions.act_window,name:hs_pts_cmsp.hs_pts_cmsp_fabricstorage_wizard_action
+#: model:ir.actions.act_window,name:hs_pts_cmsp.hs_pts_cmsp_prepregstorage_wizard_action
+#: model:ir.actions.act_window,name:hs_pts_cmsp.hs_pts_cmsp_resinstorage_wizard_action
+#: model:ir.actions.act_window,name:hs_pts_cmsp.hs_pts_cmsp_sizingstorage_wizard_action
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_fabricstorage_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_prepregstorage_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_resinstorage_wizard_view
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.hs_pts_cmsp_sizingstorage_wizard_view
+msgid "Storage"
+msgstr "入库"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.task_action
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_task_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_task_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_task_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_task_id
+#: model:ir.ui.menu,name:hs_pts_cmsp.task_menu
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.task_view_calendar
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.task_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.task_view_form
+msgid "Task"
+msgstr "任务"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+msgid "Task Confirm"
+msgstr "确定生产任务"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,state:0
+msgid "Task Confirmation"
+msgstr "车间确认"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,state:0
+msgid "Task Finished"
+msgstr "任务完成"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,state:0
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_filter
+msgid "Task in Progressing"
+msgstr "生产中"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_task_ids
+msgid "Tasks"
+msgstr "任务"
+
+#. module: hs_pts_cmsp
+#: selection:hs_pts.cmsp.plan,production_type:0
+msgid "Test"
+msgstr "测试"
+
+#. module: hs_pts_cmsp
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_fabricshiftreportwriter
+msgid "The user can write fabric shift report."
+msgstr "The user can write fabric shift report."
+
+#. module: hs_pts_cmsp
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_docprepare
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_planner
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_processconfirm
+msgid "The user will be able to manage Planning records."
+msgstr "The user will be able to manage Planning records."
+
+#. module: hs_pts_cmsp
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_manager
+msgid "The user will be able to manage all cmsp records."
+msgstr "The user will be able to manage all cmsp records."
+
+#. module: hs_pts_cmsp
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_production_director_fabric
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_production_director_prepreg
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_production_director_resin
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_production_director_sizing
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_production_staff
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_production_staff_fabric
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_production_staff_prepreg
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_production_staff_resin
+#: model:res.groups,comment:hs_pts_cmsp.group_pts_cmsp_production_staff_sizing
+msgid "The user will be able to manage self Manufacturing records."
+msgstr "The user will be able to manage self Manufacturing records."
+
+#. module: hs_pts_cmsp
+#: sql_constraint:hs_pts.cmsp.workgroupitem:0
+msgid "The work group item already exists with this employee!"
+msgstr "该员工已存在在次班组中!"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricroll_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.prepreg_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.resin_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.sizing_view_filter
+msgid "Today"
+msgstr "今天"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_unit
+msgid "Unit"
+msgstr "单位"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_unread
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_unread
+msgid "Unread Messages"
+msgstr "未读消息"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_item_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_plan_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_qualitylevel_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workfloor_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_message_unread_counter
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "未读消息计数器"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_weight
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_weight
+msgid "Weight"
+msgstr "重量"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_weight
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_weight
+msgid "Weight (Kg)"
+msgstr "重量 (Kg)"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_productmodel_width
+msgid "Width"
+msgstr "宽"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_work_date
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_work_date
+msgid "Work Date"
+msgstr "日期"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_workfloor
+#: model:ir.ui.menu,name:hs_pts_cmsp.workfloor_menu
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroup_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workunit_view_filter
+msgid "Work Floor"
+msgstr "车间"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_workgroup
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_workgroup_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_workgroup_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_workgroup_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_workgroup_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_workgroup_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_workgroup_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroupitem_workgroup_id
+#: model:ir.ui.menu,name:hs_pts_cmsp.workgroup_menu
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricroll_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.prepreg_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.resin_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.sizing_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroupitem_view_filter
+msgid "Work Group"
+msgstr "班组"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_workgroupitem
+msgid "Work Group Item"
+msgstr "班组成员"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.menu,name:hs_pts_cmsp.workgroupitem_menu
+msgid "Work Group Items"
+msgstr "班组成员"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_display_workshift
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_display_workshift
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_workshift
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_workshift
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_workshift
+msgid "Work Shift"
+msgstr "班次"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_workunit
+#: model:ir.ui.menu,name:hs_pts_cmsp.workunit_menu
+msgid "Work Unit"
+msgstr "机台"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workfloor_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workfloor_view_form
+msgid "WorkFloor"
+msgstr "车间"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_workunit_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_main_workunit_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_report_wizard_workunit_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricshiftreport_workunit_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_workunit_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_workunit_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_workunit_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_task_workunit_id
+msgid "WorkUnit"
+msgstr "机台"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.workfloor_action
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workgroup_workfloor_id
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_workunit_workfloor_id
+msgid "Workfloor"
+msgstr "车间"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.workunit_action
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workunit_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workunit_view_form
+msgid "Workunit"
+msgstr "机台"
+
+#. module: hs_pts_cmsp
+#: code:addons/hs_pts_cmsp/models/models.py:178
+#: code:addons/hs_pts_cmsp/models/models.py:183
+#: code:addons/hs_pts_cmsp/models/models.py:188
+#: code:addons/hs_pts_cmsp/models/models.py:191
+#: code:addons/hs_pts_cmsp/models/models.py:194
+#: code:addons/hs_pts_cmsp/models/models.py:197
+#, python-format
+msgid "You can not change the record."
+msgstr "你没有权限修改这条记录，请联系管理员."
+
+#. module: hs_pts_cmsp
+#: code:addons/hs_pts_cmsp/models/models.py:633
+#: code:addons/hs_pts_cmsp/models/models.py:818
+#: code:addons/hs_pts_cmsp/models/models.py:994
+#: code:addons/hs_pts_cmsp/models/models.py:1170
+#, python-format
+msgid "You can not delete the product already in storage!"
+msgstr "你不能删除已入库的产品!"
+
+#. module: hs_pts_cmsp
+#: code:addons/hs_pts_cmsp/models/models.py:130
+#, python-format
+msgid "You can only delete draft or cancelled plan!"
+msgstr "你只能删除草稿或取消的计划!"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.fabricshiftreport_action
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_item_view_form
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_main_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_main_view_form
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.fabricshiftreport_view_form
+msgid "fabricshiftreport"
+msgstr "织物日报"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.fabricshiftreport_main_action
+msgid "fabricshiftreport.main"
+msgstr "织物工作数据录入"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.fabricshiftreport_report_wizard_action
+msgid "fabricshiftreport.wizard"
+msgstr "织物日报生成"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_fabric_sq_wizard
+msgid "hs_pts.cmsp.fabric.sq.wizard"
+msgstr "hs_pts.cmsp.fabric.sq.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_fabric_storage_wizard
+msgid "hs_pts.cmsp.fabric.storage.wizard"
+msgstr "hs_pts.cmsp.fabric.storage.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_fabric_wizard
+msgid "hs_pts.cmsp.fabric.wizard"
+msgstr "hs_pts.cmsp.fabric.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_fabricshiftreport_report_wizard
+msgid "hs_pts.cmsp.fabricshiftreport.report.wizard"
+msgstr "hs_pts.cmsp.fabricshiftreport.report.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_prepreg_sq_wizard
+msgid "hs_pts.cmsp.prepreg.sq.wizard"
+msgstr "hs_pts.cmsp.prepreg.sq.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_prepreg_storage_wizard
+msgid "hs_pts.cmsp.prepreg.storage.wizard"
+msgstr "hs_pts.cmsp.prepreg.storage.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_prepreg_wizard
+msgid "hs_pts.cmsp.prepreg.wizard"
+msgstr "hs_pts.cmsp.prepreg.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_resin_sq_wizard
+msgid "hs_pts.cmsp.resin.sq.wizard"
+msgstr "hs_pts.cmsp.resin.sq.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_resin_storage_wizard
+msgid "hs_pts.cmsp.resin.storage.wizard"
+msgstr "hs_pts.cmsp.resin.storage.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_resin_wizard
+msgid "hs_pts.cmsp.resin.wizard"
+msgstr "hs_pts.cmsp.resin.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_sizing_sq_wizard
+msgid "hs_pts.cmsp.sizing.sq.wizard"
+msgstr "hs_pts.cmsp.sizing.sq.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_sizing_storage_wizard
+msgid "hs_pts.cmsp.sizing.storage.wizard"
+msgstr "hs_pts.cmsp.sizing.storage.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.model,name:hs_pts_cmsp.model_hs_pts_cmsp_sizing_wizard
+msgid "hs_pts.cmsp.sizing.wizard"
+msgstr "hs_pts.cmsp.sizing.wizard"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.productmodel_action
+msgid "productmodel"
+msgstr "产品型号"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.workgroup_action
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroup_view_filter
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroup_view_form
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroupitem_view_form
+msgid "workgroup"
+msgstr "班组"
+
+#. module: hs_pts_cmsp
+#: model:ir.actions.act_window,name:hs_pts_cmsp.workgroupitem_action
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.workgroupitem_view_filter
+msgid "workgroupitem"
+msgstr "班组成员"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_gross_weight
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_gross_weight
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_gross_weight
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_gross_weight
+msgid "Gross Weight (Kg)"
+msgstr "毛重 (Kg)"
+
+#. module: hs_pts_cmsp
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_fabricroll_net_weight
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_prepregroll_net_weight
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_resinlot_net_weight
+#: model:ir.model.fields,field_description:hs_pts_cmsp.field_hs_pts_cmsp_sizinglot_net_weight
+msgid "Net Weight (Kg)"
+msgstr "净重 (Kg)"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_form
+msgid "Back to Draft"
+msgstr "返回草稿"
+
+#. module: hs_pts_cmsp
+#: model:ir.ui.view,arch_db:hs_pts_cmsp.plan_view_form
+msgid "Are you sure you want to do this?"
+msgstr "你是否确定进行此操作?"

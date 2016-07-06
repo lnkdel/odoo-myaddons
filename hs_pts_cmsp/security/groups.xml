@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_pts_cmsp_production_staff" model="res.groups">
+            <field name="name">PTS CMSP Production Staff</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage self Manufacturing records.</field>
+        </record>
+
+        <record id="group_pts_cmsp_production_director_prepreg" model="res.groups">
+            <field name="name">PTS CMSP Production director for prepreg</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage self Manufacturing records.</field>
+        </record>
+        <record id="group_pts_cmsp_production_director_fabric" model="res.groups">
+            <field name="name">PTS CMSP Production director for fabric</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage self Manufacturing records.</field>
+        </record>
+        <record id="group_pts_cmsp_production_director_resin" model="res.groups">
+            <field name="name">PTS CMSP Production director for resin</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage self Manufacturing records.</field>
+        </record>
+        <record id="group_pts_cmsp_production_director_sizing" model="res.groups">
+            <field name="name">PTS CMSP Production director for sizing</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage self Manufacturing records.</field>
+        </record>
+
+        <record id="group_pts_cmsp_production_staff_prepreg" model="res.groups">
+            <field name="name">PTS CMSP Production Staff for prepreg</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage self Manufacturing records.</field>
+        </record>
+        <record id="group_pts_cmsp_production_staff_fabric" model="res.groups">
+            <field name="name">PTS CMSP Production Staff for fabric</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage self Manufacturing records.</field>
+        </record>
+        <record id="group_pts_cmsp_production_staff_resin" model="res.groups">
+            <field name="name">PTS CMSP Production Staff for resin</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage self Manufacturing records.</field>
+        </record>
+        <record id="group_pts_cmsp_production_staff_sizing" model="res.groups">
+            <field name="name">PTS CMSP Production Staff for sizing</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage self Manufacturing records.</field>
+        </record>
+
+
+        <record id="group_pts_cmsp_planner" model="res.groups">
+            <field name="name">PTS CMSP Planner</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage Planning records.</field>
+        </record>
+        <!--<record id="group_pts_cmsp_processconfirm" model="res.groups">-->
+            <!--<field name="name">PTS CMSP Process Confirm</field>-->
+            <!--<field name="category_id" ref="hs_base.module_category_hengshen"/>-->
+            <!--<field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>-->
+            <!--<field name="comment">The user will be able to manage Planning records.</field>-->
+        <!--</record>-->
+        <record id="group_pts_cmsp_processconfirm_prepreg" model="res.groups">
+            <field name="name">PTS CMSP Process Confirm Prepreg</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage Planning records.</field>
+        </record>
+        <record id="group_pts_cmsp_processconfirm_fabric" model="res.groups">
+            <field name="name">PTS CMSP Process Confirm Fabric</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage Planning records.</field>
+        </record>
+        <record id="group_pts_cmsp_processconfirm_resinsizing" model="res.groups">
+            <field name="name">PTS CMSP Process Confirm ResinSizing</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage Planning records.</field>
+        </record>
+        <!--<record id="group_pts_cmsp_docprepare" model="res.groups">-->
+            <!--<field name="name">PTS CMSP Doc Prepare</field>-->
+            <!--<field name="category_id" ref="hs_base.module_category_hengshen"/>-->
+            <!--<field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>-->
+            <!--<field name="comment">The user will be able to manage Planning records.</field>-->
+        <!--</record>-->
+        <record id="group_pts_cmsp_docprepare_prepreg" model="res.groups">
+            <field name="name">PTS CMSP Doc Prepare Prepreg</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage Planning records.</field>
+        </record>
+        <record id="group_pts_cmsp_docprepare_fabric" model="res.groups">
+            <field name="name">PTS CMSP Doc Prepare Fabric</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage Planning records.</field>
+        </record>
+        <record id="group_pts_cmsp_docprepare_resinsizing" model="res.groups">
+            <field name="name">PTS CMSP Doc Prepare Resinsizing</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user will be able to manage Planning records.</field>
+        </record>
+
+        <record id="group_pts_cmsp_fabricshiftreportwriter" model="res.groups">
+            <field name="name">PTS CMSP Fabric Shift Report Writer</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('hs_pts.group_pts_user'))]"/>
+            <field name="comment">The user can write fabric shift report.</field>
+        </record>
+
+        <record id="group_pts_cmsp_manager" model="res.groups">
+            <field name="name">PTS CMSP Manager</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="implied_ids" eval="[(4, ref('group_pts_cmsp_production_staff')), (4, ref('group_pts_cmsp_planner')),
+            (4, ref('group_pts_cmsp_production_director_prepreg')), (4, ref('group_pts_cmsp_production_director_fabric')),
+            (4, ref('group_pts_cmsp_production_director_resin')), (4, ref('group_pts_cmsp_production_director_sizing')),
+            (4, ref('group_pts_cmsp_production_staff_prepreg')),(4, ref('group_pts_cmsp_production_staff_fabric')),
+            (4, ref('group_pts_cmsp_production_staff_resin')), (4, ref('group_pts_cmsp_production_staff_sizing')),
+            (4, ref('group_pts_cmsp_processconfirm_prepreg')), (4, ref('group_pts_cmsp_processconfirm_fabric')),
+            (4, ref('group_pts_cmsp_processconfirm_resinsizing')),(4, ref('group_pts_cmsp_docprepare_prepreg')),
+            (4, ref('group_pts_cmsp_docprepare_fabric')),(4, ref('group_pts_cmsp_docprepare_resinsizing'))]"/>
+            <field name="comment">The user will be able to manage all cmsp records.</field>
+        </record>
+    </data>
+</odoo>
+

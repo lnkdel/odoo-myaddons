@@ -1,0 +1,1646 @@
+<openerp>
+    <data>
+        <menuitem id="cmsp_Manufacturing_management_menu" name="Manufacturing" parent="hs_pts.hs_pts_menu" sequence="2" />
+
+        <record id="hs_pts_cmsp_prepregstorage_wizard_view" model="ir.ui.view">
+            <field name="name">Prepreg Storage</field>
+            <field name="model">hs_pts.cmsp.prepreg.storage.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Storage">
+                    <group>
+                        <group>
+                            <field name="operate" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button type="object" name="confirm_button" string="Confirm" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="hs_pts_cmsp_prepregsetquality_wizard_view" model="ir.ui.view">
+            <field name="name">Prepreg Set Quality Level</field>
+            <field name="model">hs_pts.cmsp.prepreg.sq.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Set Quality Level">
+                    <group>
+                        <group>
+                            <field name="qualitylevel"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button type="object" name="set_quality_button" string="Set Quality Level" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="hs_pts_cmsp_prepreg_wizard_view" model="ir.ui.view">
+            <field name="name">Export XLS</field>
+            <field name="model">hs_pts.cmsp.prepreg.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Export XLS">
+                    <field name="prepreg_ids"/>
+                    <footer>
+                        <button string="Export XLS" name="export_xls_button" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="prepreg_view_tree" model="ir.ui.view">
+            <field name="name">prepregroll.tree</field>
+            <field name="model">hs_pts.cmsp.prepregroll</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product_date"/>
+                    <field name="barcode_no"/>
+                    <field name="model_id"/>
+                    <field name="workunit_id"/>
+                    <field name="workgroup_id"/>
+                    <field name="roll_length"/>
+                    <field name="gross_weight"/>
+                    <field name="net_weight"/>
+                    <field name="lot_no"/>
+                    <field name="qualitylevel"/>
+                    <field name="stock_time"/>
+                    <field name="create_date"/>
+                    <field name="create_uid"/>
+                    <field name="write_date"/>
+                    <field name="write_uid"/>
+                </tree>
+            </field>
+        </record>
+        <record id="prepreg_view_form" model="ir.ui.view">
+            <field name="name">prepregroll.form</field>
+            <field name="model">hs_pts.cmsp.prepregroll</field>
+            <field name="arch" type="xml">
+                <form string="PrepregRoll">
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <field name="plan_id" onchange="onchange_plan()" domain="[('product_type', '=', 'prepreg'),('state', '=', 'tip')]"></field>
+                                <field name="task_id" domain="[('plan_id.product_type', '=', 'prepreg'),('plan_id.state', '=', 'tip')]"></field>
+                                <!--<field name="model_id"/>-->
+                                <field name="workgroup_id" domain="[('workfloor_id.name', '=', u'预浸车间')]"/>
+                                <field name="product_date"/>
+                                <field name="stock_time"/>
+                                <field name="remark"/>
+                            </group>
+                            <group>
+                                <!--<field name="workunit_id"/>-->
+                                <field name="lot_no"/>
+                                <field name="roll_length" />
+                                <field name="gross_weight"/>
+                                <field name="net_weight"/>
+                                <field name="qualitylevel"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="prepreg_view_filter" model="ir.ui.view">
+            <field name="name">prepregroll.filter</field>
+            <field name="model">hs_pts.cmsp.prepregroll</field>
+            <field name="arch" type="xml">
+                <search string="Prepreg Rolls">
+                    <field name="product_date"/>
+                    <field name="barcode_no"/>
+                    <field name="model_id"/>
+                    <field name="workgroup_id"/>
+                    <field name="roll_length"/>
+                    <field name="gross_weight"/>
+                    <field name="net_weight"/>
+                    <field name="lot_no"/>
+                    <field name="qualitylevel"/>
+                    <filter string="Today" name="today" domain="[('product_date','&gt;=',datetime.datetime.now().replace(hour=0, minute=0, second=0)),('product_date','&lt;=',datetime.datetime.now().replace(hour=23, minute=59, second=59))]" />
+                    <filter string="Current Month" domain="[('product_date','&gt;=', datetime.datetime.now().strftime('%Y-%m-01'))]" />
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Model" domain="[]" context="{'group_by':'model_id'}"/>
+                        <filter string="Lot No." domain="[]" context="{'group_by':'lot_no'}"/>
+                        <filter string="Production Date" domain="[]" context="{'group_by':'product_date'}"/>
+                        <filter string="Work Group" domain="[]" context="{'group_by':'workgroup_id'}"/>
+                        <filter string="Quality Level" domain="[]" context="{'group_by':'qualitylevel'}"/>
+                    </group>
+                </search>
+             </field>
+        </record>
+        <record id="prepreg_action" model="ir.actions.act_window">
+            <field name="name">Prepreg Rolls</field>
+            <field name="res_model">hs_pts.cmsp.prepregroll</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_today': True}</field>
+        </record>
+        <menuitem id="prepreg_menu" name="Prepreg Rolls"
+                  parent="cmsp_Manufacturing_management_menu" action="prepreg_action"
+                  sequence="1"/>
+
+        <record id="hs_pts_cmsp_fabricstorage_wizard_view" model="ir.ui.view">
+            <field name="name">Fabric Storage</field>
+            <field name="model">hs_pts.cmsp.fabric.storage.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Storage">
+                    <group>
+                        <group>
+                            <field name="operate" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button type="object" name="confirm_button" string="Confirm" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="hs_pts_cmsp_fabricsetquality_wizard_view" model="ir.ui.view">
+            <field name="name">Fabric Set Quality Level</field>
+            <field name="model">hs_pts.cmsp.fabric.sq.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Set Quality Level">
+                    <group>
+                        <group>
+                            <field name="qualitylevel"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button type="object" name="set_quality_button" string="Set Quality Level" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="hs_pts_cmsp_fabric_wizard_view" model="ir.ui.view">
+            <field name="name">Export XLS</field>
+            <field name="model">hs_pts.cmsp.fabric.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Export XLS">
+                    <field name="fabric_ids"/>
+                    <footer>
+                        <button string="Export XLS" name="export_xls_button" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="fabricroll_view_tree" model="ir.ui.view">
+            <field name="name">fabricroll.tree</field>
+            <field name="model">hs_pts.cmsp.fabricroll</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product_date"/>
+                    <field name="barcode_no"/>
+                    <field name="model_id"/>
+                    <field name="workunit_id"/>
+                    <field name="workgroup_id"/>
+                    <field name="roll_length"/>
+                    <field name="gross_weight"/>
+                    <field name="net_weight"/>
+                    <field name="lot_no"/>
+                    <field name="qualitylevel"/>
+                    <field name="stock_time"/>
+                    <field name="create_date"/>
+                    <field name="create_uid"/>
+                    <field name="write_date"/>
+                    <field name="write_uid"/>
+                </tree>
+            </field>
+        </record>
+        <record id="fabricroll_view_form" model="ir.ui.view">
+            <field name="name">fabricroll.form</field>
+            <field name="model">hs_pts.cmsp.fabricroll</field>
+            <field name="arch" type="xml">
+                <form string="Fabric Roll">
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <field name="plan_id" onchange="onchange_plan()" domain="[('product_type', '=', 'fabric'),('state', '=', 'tip')]"></field>
+                                <field name="task_id" domain="[('plan_id.product_type', '=', 'fabric'),('plan_id.state', '=', 'tip')]"></field>
+                                <!--<field name="model_id"/>-->
+                                <field name="workgroup_id" domain="[('workfloor_id.name', '=', '织物车间')]"/>
+                                <field name="product_date"/>
+                                <field name="stock_time"/>
+                                <field name="remark"/>
+                            </group>
+                            <group>
+                                <!--<field name="workunit_id"/>-->
+                                <field name="lot_no"/>
+                                <field name="roll_length" />
+                                <field name="gross_weight"/>
+                                <field name="net_weight"/>
+                                <field name="qualitylevel"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="fabricroll_view_filter" model="ir.ui.view">
+            <field name="name">fabricroll.filter</field>
+            <field name="model">hs_pts.cmsp.fabricroll</field>
+            <field name="arch" type="xml">
+                <search string="Fabric Rolls">
+                    <field name="product_date"/>
+                    <field name="barcode_no"/>
+                    <field name="model_id"/>
+                    <field name="workgroup_id"/>
+                    <field name="gross_weight"/>
+                    <field name="net_weight"/>
+                    <field name="roll_length"/>
+                    <field name="lot_no"/>
+                    <field name="qualitylevel"/>
+                    <filter string="Today" name="today" domain="[('product_date','&gt;=',datetime.datetime.now().replace(hour=0, minute=0, second=0)),('product_date','&lt;=',datetime.datetime.now().replace(hour=23, minute=59, second=59))]" />
+                    <filter string="Current Month" domain="[('product_date','&gt;=', datetime.datetime.now().strftime('%Y-%m-01'))]" />
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Model" domain="[]" context="{'group_by':'model_id'}"/>
+                        <filter string="Lot No." domain="[]" context="{'group_by':'lot_no'}"/>
+                        <filter string="Production Date" domain="[]" context="{'group_by':'product_date'}"/>
+                        <filter string="Work Group" domain="[]" context="{'group_by':'workgroup_id'}"/>
+                        <filter string="Quality Level" domain="[]" context="{'group_by':'qualitylevel'}"/>
+                    </group>
+                </search>
+             </field>
+        </record>
+        <record id="fabricroll_action" model="ir.actions.act_window">
+            <field name="name">Fabric Rolls</field>
+            <field name="res_model">hs_pts.cmsp.fabricroll</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_today': True}</field>
+        </record>
+        <menuitem id="fabric_menu" name="Fabric Rolls"
+                  parent="cmsp_Manufacturing_management_menu" action="fabricroll_action"
+                  sequence="2"/>
+
+        <record id="hs_pts_cmsp_resinstorage_wizard_view" model="ir.ui.view">
+            <field name="name">Resin Storage</field>
+            <field name="model">hs_pts.cmsp.resin.storage.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Storage">
+                    <group>
+                        <group>
+                            <field name="operate" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button type="object" name="confirm_button" string="Confirm" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="hs_pts_cmsp_resinsetquality_wizard_view" model="ir.ui.view">
+            <field name="name">Resin Set Quality Level</field>
+            <field name="model">hs_pts.cmsp.resin.sq.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Set Quality Level">
+                    <group>
+                        <group>
+                            <field name="qualitylevel"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button type="object" name="set_quality_button" string="Set Quality Level" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="hs_pts_cmsp_resin_wizard_view" model="ir.ui.view">
+            <field name="name">Export XLS</field>
+            <field name="model">hs_pts.cmsp.resin.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Export XLS">
+                    <field name="resin_ids"/>
+                    <footer>
+                        <button string="Export XLS" name="export_xls_button" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="resin_view_tree" model="ir.ui.view">
+            <field name="name">resinlot.tree</field>
+            <field name="model">hs_pts.cmsp.resinlot</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product_date"/>
+                    <field name="barcode_no"/>
+                    <field name="model_id"/>
+                    <field name="workunit_id"/>
+                    <field name="workgroup_id"/>
+                    <field name="content"/>
+                    <field name="gross_weight"/>
+                    <field name="net_weight"/>
+                    <field name="shelflife"/>
+                    <field name="lot_no"/>
+                    <field name="qualitylevel"/>
+                    <field name="stock_time"/>
+                    <field name="create_date"/>
+                    <field name="create_uid"/>
+                    <field name="write_date"/>
+                    <field name="write_uid"/>
+                </tree>
+            </field>
+        </record>
+        <record id="resin_view_form" model="ir.ui.view">
+            <field name="name">resinlot.form</field>
+            <field name="model">hs_pts.cmsp.resinlot</field>
+            <field name="arch" type="xml">
+                <form string="ResinLot">
+                    <sheet>
+                        <group name="group_top">
+                        <group>
+                            <field name="plan_id" onchange="onchange_plan()" domain="[('product_type', '=', 'resin'),('state', '=', 'tip')]"></field>
+                            <field name="task_id" domain="[('plan_id.product_type', '=', 'resin'),('plan_id.state', '=', 'tip')]"></field>
+                            <!--<field name="model_id" readonly="1"/>-->
+                            <field name="workgroup_id" domain="[('workfloor_id.name', '=', '树脂车间')]"/>
+                            <field name="product_date"/>
+                            <field name="stock_time"/>
+                            <field name="qualitylevel"/>
+                            <field name="remark"/>
+                        </group>
+                        <group>
+                            <!--<field name="workunit_id" readonly="1"/>-->
+                            <field name="lot_no"/>
+                            <field name="shelflife"/>
+                            <field name="content" />
+                            <field name="gross_weight"/>
+                            <field name="net_weight"/>
+
+                        </group>
+                    </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="resin_view_filter" model="ir.ui.view">
+            <field name="name">resinlot.filter</field>
+            <field name="model">hs_pts.cmsp.resinlot</field>
+            <field name="arch" type="xml">
+                <search string="ResinLot">
+                    <field name="product_date"/>
+                    <field name="barcode_no"/>
+                    <field name="model_id"/>
+                    <field name="workgroup_id"/>
+                    <field name="content"/>
+                    <field name="gross_weight"/>
+                    <field name="net_weight"/>
+                    <field name="lot_no"/>
+                    <field name="shelflife"/>
+                    <field name="qualitylevel"/>
+                    <filter string="Today" name="today" domain="[('product_date','&gt;=',datetime.datetime.now().replace(hour=0, minute=0, second=0)),('product_date','&lt;=',datetime.datetime.now().replace(hour=23, minute=59, second=59))]" />
+                    <filter string="Current Month" domain="[('product_date','&gt;=', datetime.datetime.now().strftime('%Y-%m-01'))]" />
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Model" domain="[]" context="{'group_by':'model_id'}"/>
+                        <filter string="Production Date" domain="[]" context="{'group_by':'product_date'}"/>
+                        <filter string="Work Group" domain="[]" context="{'group_by':'workgroup_id'}"/>
+                        <filter string="Quality Level" domain="[]" context="{'group_by':'qualitylevel'}"/>
+                    </group>
+                </search>
+             </field>
+        </record>
+        <record id="resin_action" model="ir.actions.act_window">
+            <field name="name">ResinLot</field>
+            <field name="res_model">hs_pts.cmsp.resinlot</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_today': True}</field>
+        </record>
+        <menuitem id="resin_menu" name="ResinLot"
+                  parent="cmsp_Manufacturing_management_menu" action="resin_action"
+                  sequence="3"/>
+
+        <record id="hs_pts_cmsp_sizingstorage_wizard_view" model="ir.ui.view">
+            <field name="name">Sizing Storage</field>
+            <field name="model">hs_pts.cmsp.sizing.storage.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Storage">
+                    <group>
+                        <group>
+                            <field name="operate" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button type="object" name="confirm_button" string="Confirm" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="hs_pts_cmsp_sizingsetquality_wizard_view" model="ir.ui.view">
+            <field name="name">Sizing Set Quality Level</field>
+            <field name="model">hs_pts.cmsp.sizing.sq.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Set Quality Level">
+                    <group>
+                        <group>
+                            <field name="qualitylevel"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button type="object" name="set_quality_button" string="Set Quality Level" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="hs_pts_cmsp_sizing_wizard_view" model="ir.ui.view">
+            <field name="name">Export XLS</field>
+            <field name="model">hs_pts.cmsp.sizing.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Export XLS">
+                    <field name="sizing_ids"/>
+                    <footer>
+                        <button string="Export XLS" name="export_xls_button" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="sizing_view_tree" model="ir.ui.view">
+            <field name="name">sizinglot.tree</field>
+            <field name="model">hs_pts.cmsp.sizinglot</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product_date"/>
+                    <field name="barcode_no"/>
+                    <field name="model_id"/>
+                    <field name="workunit_id"/>
+                    <field name="workgroup_id"/>
+                    <field name="content"/>
+                    <field name="gross_weight"/>
+                    <field name="net_weight"/>
+                    <field name="shelflife"/>
+                    <field name="lot_no"/>
+                    <field name="qualitylevel"/>
+                    <field name="stock_time"/>
+                    <field name="create_date"/>
+                    <field name="create_uid"/>
+                    <field name="write_date"/>
+                    <field name="write_uid"/>
+                </tree>
+            </field>
+        </record>
+        <record id="sizing_view_form" model="ir.ui.view">
+            <field name="name">sizinglot.form</field>
+            <field name="model">hs_pts.cmsp.sizinglot</field>
+            <field name="arch" type="xml">
+                <form string="Sizing">
+                    <sheet>
+                        <group name="group_top">
+                        <group>
+                            <field name="plan_id" onchange="onchange_plan()" domain="[('product_type', '=', 'sizing'),('state', '=', 'tip')]"></field>
+                            <field name="task_id" domain="[('plan_id.product_type', '=', 'sizing'),('plan_id.state', '=', 'tip')]"></field>
+                            <!--<field name="model_id"/>-->
+                            <field name="workgroup_id" domain="[('workfloor_id.name', '=', '上浆剂车间')]"/>
+                            <field name="product_date"/>
+                            <field name="stock_time"/>
+                            <field name="qualitylevel"/>
+                        </group>
+                        <group>
+                            <!--<field name="workunit_id"/>-->
+                            <field name="lot_no"/>
+                            <field name="shelflife"/>
+                            <field name="content" />
+                            <field name="gross_weight"/>
+                            <field name="net_weight"/>
+                            <field name="remark"/>
+                        </group>
+                    </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="sizing_view_filter" model="ir.ui.view">
+            <field name="name">sizinglot.filter</field>
+            <field name="model">hs_pts.cmsp.sizinglot</field>
+            <field name="arch" type="xml">
+                <search string="SizingLot">
+                    <field name="product_date"/>
+                    <field name="barcode_no"/>
+                    <field name="model_id"/>
+                    <field name="workgroup_id"/>
+                    <field name="content"/>
+                    <field name="gross_weight"/>
+                    <field name="net_weight"/>
+                    <field name="lot_no"/>
+                    <field name="shelflife"/>
+                    <field name="qualitylevel"/>
+                    <filter string="Today" name="today" domain="[('product_date','&gt;=',datetime.datetime.now().replace(hour=0, minute=0, second=0)),('product_date','&lt;=',datetime.datetime.now().replace(hour=23, minute=59, second=59))]" />
+                    <filter string="Current Month" domain="[('product_date','&gt;=', datetime.datetime.now().strftime('%Y-%m-01'))]" />
+                    <separator/>
+                    <group expand="0" string="Group By">
+                        <filter string="Model" domain="[]" context="{'group_by':'model_id'}"/>
+                        <filter string="Production Date" domain="[]" context="{'group_by':'product_date'}"/>
+                        <filter string="Work Group" domain="[]" context="{'group_by':'workgroup_id'}"/>
+                        <filter string="Quality Level" domain="[]" context="{'group_by':'qualitylevel'}"/>
+                    </group>
+                </search>
+             </field>
+        </record>
+        <record id="sizing_action" model="ir.actions.act_window">
+            <field name="name">Sizing Lot</field>
+            <field name="res_model">hs_pts.cmsp.sizinglot</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'search_default_today': True}</field>
+        </record>
+        <menuitem id="sizing_menu" name="SizingLot"
+                  parent="cmsp_Manufacturing_management_menu" action="sizing_action"
+                  sequence="4"/>
+
+        <menuitem id="cmsp_Planning_management_menu" name="Planning" parent="hs_pts.hs_pts_menu" sequence="3" />
+
+        <record id="plan_view_tree" model="ir.ui.view">
+            <field name="name">plan.tree</field>
+            <field name="model">hs_pts.cmsp.plan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="id"/>
+                    <field name="notice_no"/>
+                    <field name="planner"/>
+                    <field name="product_type"/>
+                    <field name="production_type"/>
+                    <field name="model_id"/>
+                    <field name="amount"/>
+                    <field name="complete_date"/>
+                    <field name="state"/>
+                    <field name="remark"/>
+                </tree>
+            </field>
+        </record>
+        <record id="plan_view_form" model="ir.ui.view">
+            <field name="name">plan.form</field>
+            <field name="model">hs_pts.cmsp.plan</field>
+            <field name="arch" type="xml">
+                <form string="Plan">
+                    <header>
+                        <button string="Confirm" name="plan_confirm" states="draft" type="workflow" class="oe_highlight" groups="hs_pts_cmsp.group_pts_cmsp_planner"/> <!--计划员提单-->
+
+                        <button string="Next Step" name="plan_confirm2" states="ps" type="workflow"  class="oe_highlight" groups="hs_pts_cmsp.group_pts_cmsp_processconfirm_prepreg"/> <!--工艺PE 提交给文档下发-->
+                        <button string="Refuse" name="plan_reset" states="ps" type="workflow" class="oe_highlight"        groups="hs_pts_cmsp.group_pts_cmsp_processconfirm_prepreg" confirm="Are you sure you want to do this?" /> <!--工艺PE 退回计划-->
+                        <button string="Next Step" name="plan_confirm2" states="ps" type="workflow"  class="oe_highlight" groups="hs_pts_cmsp.group_pts_cmsp_processconfirm_fabric"/> <!--工艺PE 提交给文档下发-->
+                        <button string="Refuse" name="plan_reset" states="ps" type="workflow" class="oe_highlight"        groups="hs_pts_cmsp.group_pts_cmsp_processconfirm_fabric" confirm="Are you sure you want to do this?" /> <!--工艺PE 退回计划-->
+                        <button string="Next Step" name="plan_confirm2" states="ps" type="workflow"  class="oe_highlight" groups="hs_pts_cmsp.group_pts_cmsp_processconfirm_resinsizing"/> <!--工艺PE 提交给文档下发-->
+                        <button string="Refuse" name="plan_reset" states="ps" type="workflow" class="oe_highlight"        groups="hs_pts_cmsp.group_pts_cmsp_processconfirm_resinsizing" confirm="Are you sure you want to do this?" /> <!--工艺PE 退回计划-->
+
+                        <button string="Next Step" name="plan_confirm3" states="dp" type="workflow" class="oe_highlight" groups="hs_pts_cmsp.group_pts_cmsp_docprepare_prepreg"/> <!--文档下发 提交给车间审核-->
+                        <button string="Refuse" name="plan_reset2" states="dp" type="workflow" class="oe_highlight"      groups="hs_pts_cmsp.group_pts_cmsp_docprepare_prepreg" confirm="Are you sure you want to do this?" /> <!--文档下发 退回工艺确定-->
+                        <button string="Next Step" name="plan_confirm3" states="dp" type="workflow" class="oe_highlight" groups="hs_pts_cmsp.group_pts_cmsp_docprepare_fabric"/> <!--文档下发 提交给车间审核-->
+                        <button string="Refuse" name="plan_reset2" states="dp" type="workflow" class="oe_highlight"      groups="hs_pts_cmsp.group_pts_cmsp_docprepare_fabric" confirm="Are you sure you want to do this?" /> <!--文档下发 退回工艺确定-->
+                        <button string="Next Step" name="plan_confirm3" states="dp" type="workflow" class="oe_highlight" groups="hs_pts_cmsp.group_pts_cmsp_docprepare_resinsizing"/> <!--文档下发 提交给车间审核-->
+                        <button string="Refuse" name="plan_reset2" states="dp" type="workflow" class="oe_highlight"      groups="hs_pts_cmsp.group_pts_cmsp_docprepare_resinsizing" confirm="Are you sure you want to do this?" /> <!--文档下发 退回工艺确定-->
+
+                        <button string="Next Step" name="plan_confirm4" states="tc" type="workflow" class="oe_highlight"   groups="hs_pts_cmsp.group_pts_cmsp_production_director_prepreg"/> <!--预浸料车间主任 确认开始生产-->
+                        <button string="Refuse" name="plan_reset3" states="tc" type="workflow" class="oe_highlight"        groups="hs_pts_cmsp.group_pts_cmsp_production_director_prepreg" confirm="Are you sure you want to do this?" /> <!--预浸料车间主任 退回文档下发-->
+                        <button string="Back to Draft" name="plan_reset" states="tc" type="workflow" class="oe_highlight"  groups="hs_pts_cmsp.group_pts_cmsp_production_director_prepreg" confirm="Are you sure you want to do this?" /> <!--预浸料车间主任 退回计划员-->
+                        <button string="Next Step" name="plan_confirm4" states="tc" type="workflow" class="oe_highlight"   groups="hs_pts_cmsp.group_pts_cmsp_production_director_fabric"/> <!--织物车间主任 确认开始生产-->
+                        <button string="Refuse" name="plan_reset3" states="tc" type="workflow" class="oe_highlight"        groups="hs_pts_cmsp.group_pts_cmsp_production_director_fabric" confirm="Are you sure you want to do this?"/> <!--织物车间主任 退回文档下发-->
+                        <button string="Back to Draft" name="plan_reset" states="tc" type="workflow" class="oe_highlight"  groups="hs_pts_cmsp.group_pts_cmsp_production_director_fabric" confirm="Are you sure you want to do this?" /> <!--织物车间主任 退回计划员-->
+                        <button string="Next Step" name="plan_confirm4" states="tc" type="workflow" class="oe_highlight"   groups="hs_pts_cmsp.group_pts_cmsp_production_director_resin"/> <!--树脂车间主任 确认开始生产-->
+                        <button string="Refuse" name="plan_reset3" states="tc" type="workflow" class="oe_highlight"        groups="hs_pts_cmsp.group_pts_cmsp_production_director_resin" confirm="Are you sure you want to do this?" /> <!--树脂车间主任 退回文档下发-->
+                        <button string="Back to Draft" name="plan_reset" states="tc" type="workflow" class="oe_highlight"  groups="hs_pts_cmsp.group_pts_cmsp_production_director_resin" confirm="Are you sure you want to do this?"/> <!--树脂车间主任 退回计划员-->
+                        <!--<button string="Next Step" name="plan_confirm4" states="tc" type="workflow" class="oe_highlight"   groups="hs_pts_cmsp.group_pts_cmsp_production_director_sizing"/> &lt;!&ndash;上浆剂车间主任 确认开始生产&ndash;&gt;-->
+                        <!--<button string="Refuse" name="plan_reset3" states="tc" type="workflow" class="oe_highlight"        groups="hs_pts_cmsp.group_pts_cmsp_production_director_sizing" confirm="Are you sure you want to do this?"/> &lt;!&ndash;上浆剂车间主任 退回文档下发&ndash;&gt;-->
+                        <!--<button string="Back to Draft" name="plan_reset" states="tc" type="workflow" class="oe_highlight"  groups="hs_pts_cmsp.group_pts_cmsp_production_director_sizing" confirm="Are you sure you want to do this?"/> &lt;!&ndash;上浆剂车间主任 退回计划员&ndash;&gt;-->
+
+                        <button string="Finished" name="plan_confirm5" states="tip" type="workflow" class="oe_highlight" groups="hs_pts_cmsp.group_pts_cmsp_production_director_prepreg" confirm="Are you sure you want to do this?"/> <!--预浸料车间主任 生产完成-->
+                        <button string="Cancel" name="plan_cancel" states="tip" type="workflow" class="oe_highlight"     groups="hs_pts_cmsp.group_pts_cmsp_production_director_prepreg" confirm="Are you sure you want to do this?"/> <!--车间主任 取消-->
+                        <button string="Finished" name="plan_confirm5" states="tip" type="workflow" class="oe_highlight" groups="hs_pts_cmsp.group_pts_cmsp_production_director_fabric" confirm="Are you sure you want to do this?"/> <!--织物车间主任 生产完成-->
+                        <button string="Cancel" name="plan_cancel" states="tip" type="workflow" class="oe_highlight"     groups="hs_pts_cmsp.group_pts_cmsp_production_director_fabric" confirm="Are you sure you want to do this?"/> <!--车间主任 取消-->
+                        <button string="Finished" name="plan_confirm5" states="tip" type="workflow" class="oe_highlight" groups="hs_pts_cmsp.group_pts_cmsp_production_director_resin" confirm="Are you sure you want to do this?"/> <!--树脂车间主任 生产完成-->
+                        <button string="Cancel" name="plan_cancel" states="tip" type="workflow" class="oe_highlight"     groups="hs_pts_cmsp.group_pts_cmsp_production_director_resin" confirm="Are you sure you want to do this?"/> <!--车间主任 取消-->
+                        <!--<button string="Finished" name="plan_confirm5" states="tip" type="workflow" class="oe_highlight" groups="hs_pts_cmsp.group_pts_cmsp_production_director_sizing" confirm="Are you sure you want to do this?"/> &lt;!&ndash;上浆剂车间主任 生产完成&ndash;&gt;-->
+                        <!--<button string="Cancel" name="plan_cancel" states="tip" type="workflow" class="oe_highlight"     groups="hs_pts_cmsp.group_pts_cmsp_production_director_sizing" confirm="Are you sure you want to do this?"/> &lt;!&ndash;车间主任 取消&ndash;&gt;-->
+
+                        <field name="state" widget="statusbar" statusbar_visible="draft,ps,dp,tc,tip,tf,cancel"
+                               statusbar_colors='{"draft":"blue","ps":"blue","dp":"blue","tc":"blue","tip":"blue","tf":"blue","cancel":"red"}'/>
+                    </header>
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <!--<field name="id"/>-->
+                                <field name="production_type" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="planner" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="model_id" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="amount" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="complete_date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            </group>
+                            <group>
+                                <field name="notice_no" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="product_type" onchange="onchange_producttype()" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="remark" attrs="{'readonly':[('state','!=','draft')]}"/>
+                                <field name="processprogram" attrs="{'readonly':[('state','!=','ps')]}" />
+                            </group>
+                        </group>
+                        <group>
+                            <field name="task_ids" attrs="{'readonly':[('state','!=','tc')]}" context="'default_plan_id': active_id" />
+                            <!--<field name="task_ids" attrs="{'readonly':[('state','!=','tc')]}" />-->
+                        </group>
+                        <group name="group_log_access">
+                            <group>
+                                <field name="create_date" readonly="1"/>
+                                <field name="create_uid" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="write_date" readonly="1"/>
+                                <field name="write_uid" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="plan_view_filter" model="ir.ui.view">
+            <field name="name">plan.filter</field>
+            <field name="model">hs_pts.cmsp.plan</field>
+            <field name="arch" type="xml">
+                <search string="Plan">
+                    <field name="id"/>
+                    <field name="production_type"/>
+                    <field name="planner"/>
+                    <field name="model_id"/>
+                    <field name="notice_no"/>
+                    <field name="product_type"/>
+                    <filter string="Prepreg" name="plan_prepreg" domain="[('product_type','=','prepreg')]"/>
+                    <filter string="Fabric" name="plan_fabric" domain="[('product_type','=','fabric')]"/>
+                    <filter string="Resin" name="plan_resin" domain="[('product_type','=','resin')]"/>
+                    <filter string="Sizing" name="plan_sizing" domain="[('product_type','=','sizing')]"/>
+                    <separator />
+                    <filter string="Draft" name="processconfirm" domain="[('state','=','draft')]"/>
+                    <filter string="Process Confirm" name="processconfirm" domain="[('state','=','ps')]"/>
+                    <filter string="Doc Prepare" name="docprepare" domain="[('state','=','dp')]"/>
+                    <filter string="Task Confirm" name="taskconfirm" domain="[('state','=','tc')]"/>
+                    <filter string="Task in Progressing" name="taskinprogressing" domain="[('state','=','tip')]"/>
+                    <filter string="Finished" name="taskfinished" domain="[('state','=','tf')]"/>
+                    <filter string="Cancel" name="cancel" domain="[('state','=','cancel')]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="State" domain="[]" context="{'group_by':'state'}"/>
+                        <filter string="Product Type" domain="[]" context="{'group_by':'product_type'}"/>
+                    </group>
+
+                </search>
+            </field>
+        </record>
+        <record id="plan_action" model="ir.actions.act_window">
+            <field name="name">Plan</field>
+            <field name="res_model">hs_pts.cmsp.plan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="plan_menu" name="Plan"
+                  parent="cmsp_Planning_management_menu" action="plan_action"
+                  sequence="1"/>
+
+        <record id="task_view_tree" model="ir.ui.view">
+            <field name="name">task.tree</field>
+            <field name="model">hs_pts.cmsp.task</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!--<field name="name"/>-->
+                    <field name="plan_id"/>
+                    <field name="start_date"/>
+                    <field name="workshift"/>
+                    <field name="workunit_id"/>
+                    <field name="lot"/>
+                    <field name="priority"/>
+                </tree>
+            </field>
+        </record>
+        <record id="task_view_form" model="ir.ui.view">
+            <field name="name">task.form</field>
+                <field name="model">hs_pts.cmsp.task</field>
+                <field name="arch" type="xml">
+                    <form string="Task">
+                        <sheet>
+                            <group name="group_top">
+                                <group>
+                                    <!--<field name="name"/>-->
+                                    <field name="plan_id" onchange="onchange_plan()" domain="[('state', '=', 'tc')]" />
+                                    <field name="workshift"/>
+                                    <field name="lot"/>
+                                </group>
+                                <group>
+                                    <field name="start_date" onchange="onchange_startdate()"/>
+                                    <field name="workunit_id" onchange="onchange_workunit()"/>
+                                    <field name="priority"/>
+                                </group>
+                            </group>
+                            <group name="group_log_access">
+                                <group>
+                                    <field name="create_date" readonly="1"/>
+                                    <field name="create_uid" readonly="1"/>
+                                </group>
+                                <group>
+                                    <field name="write_date" readonly="1"/>
+                                    <field name="write_uid" readonly="1"/>
+                                </group>
+                            </group>
+                        </sheet>
+                        <sheet>
+                            <div class="oe_chatter">
+                                <field name="message_follower_ids" widget="mail_followers"/>
+                                <field name="message_ids" widget="mail_thread"/>
+                            </div>
+                        </sheet>
+                    </form>
+                </field>
+        </record>
+        <record id="task_view_calendar" model="ir.ui.view">
+            <field name="name">task.calendar</field>
+            <field name="model">hs_pts.cmsp.task</field>
+            <field name="arch" type="xml">
+                <calendar string="Task" color="workunit_id"
+                          date_start="start_date" date_stop="start_date"
+                          mode="month"
+                          quick_add="False" avatar_model="hs_pts.cmsp.task" display="[plan_id] -- [workunit_id] -- [display_workshift]">
+                    <!--<field name="name"/>-->
+                    <field name="plan_id"/>
+                    <field name="workshift"/>
+                    <field name="display_workshift"/>
+                    <field name="workunit_id"/>
+                    <field name="start_date"/>
+                    <field name="lot"/>
+                </calendar>
+            </field>
+        </record>
+        <record id="task_view_filter" model="ir.ui.view">
+            <field name="name">task.filter</field>
+            <field name="model">hs_pts.cmsp.task</field>
+            <field name="arch" type="xml">
+                <search string="Task">
+                    <field name="plan_id"/>
+                    <field name="workunit_id"/>
+                    <field name="workshift"/>
+                    <field name="lot"/>
+                    <field name="start_date"/>
+                    <filter string="Prepreg" name="prepreg" domain="[('plan_id.product_type','=','prepreg')]"/>
+                    <filter string="Fabric" name="fabric" domain="[('plan_id.product_type','=','fabric')]"/>
+                    <filter string="Resin" name="resin" domain="[('plan_id.product_type','=','resin')]"/>
+                    <filter string="Sizing" name="sizing" domain="[('plan_id.product_type','=','sizing')]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Plan" domain="[]" context="{'group_by':'plan_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="task_action" model="ir.actions.act_window">
+            <field name="name">Task</field>
+            <field name="res_model">hs_pts.cmsp.task</field>
+            <field name="view_mode">calendar,tree,form</field>
+        </record>
+        <menuitem id="task_menu" name="Task"
+                  parent="cmsp_Planning_management_menu" action="task_action"
+                  sequence="2"/>
+
+        <menuitem id="setting_menu" name="Settings" parent="hs_pts.hs_pts_menu" sequence="99999" />
+        <record id="productmodel_view_tree" model="ir.ui.view">
+            <field name="name">productmodel.tree</field>
+            <field name="model">hs_pts.cmsp.productmodel</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="product_no"/>
+                    <field name="name"/>
+                    <field name="materiel_name"/>
+                    <field name="packing"/>
+                    <field name="iscutting"/>
+                    <field name="width"/>
+                    <field name="unit"/>
+                </tree>
+            </field>
+        </record>
+        <record id="productmodel_view_form" model="ir.ui.view">
+            <field name="name">productmodel.form</field>
+            <field name="model">hs_pts.cmsp.productmodel</field>
+            <field name="arch" type="xml">
+                <form string="Product">
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <field name="name"/>
+                                <field name="product_no"/>
+                                <field name="materiel_name"/>
+                                <field name="sequence"/>
+                                <field name="active"/>
+                            </group>
+                            <group>
+                                <field name="packing"/>
+                                <field name="iscutting"/>
+                                <field name="width"/>
+                                <field name="unit"/>
+                                <field name="remark"/>
+                            </group>
+                        </group>
+                        <group name="group_log_access">
+                            <group>
+                                <field name="create_date" readonly="1"/>
+                                <field name="create_uid" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="write_date" readonly="1"/>
+                                <field name="write_uid" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="productmodel_view_filter" model="ir.ui.view">
+            <field name="name">productmodel.filter</field>
+            <field name="model">hs_pts.cmsp.productmodel</field>
+            <field name="arch" type="xml">
+                <search string="Product">
+                    <field name="name"/>
+                    <field name="product_no"/>
+                    <field name="materiel_name" filter_domain="[('materiel_name','like',self)]"/>
+                    <filter string="Prepreg" name="prepreg" domain="[('materiel_name','like',u'预浸料')]"/>
+                    <filter string="Fabric" name="fabric" domain="[('materiel_name','like',u'织物'), ('materiel_name','not like',u'预浸料')]"/>
+                    <filter string="Resin" name="resin" domain="[('materiel_name','=',u'树脂')]"/>
+                    <filter string="Sizing" name="sizing" domain="[('materiel_name','=',u'上浆剂')]"/>
+                    <separator />
+                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                </search>
+            </field>
+        </record>
+        <record id="productmodel_action" model="ir.actions.act_window">
+            <field name="name">productmodel</field>
+            <field name="res_model">hs_pts.cmsp.productmodel</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="cmsp_productmodel_menu" name="Product Model"
+                  parent="setting_menu" action="productmodel_action"
+                  sequence="1"/>
+
+        <record id="qualitylevel_view_tree" model="ir.ui.view">
+            <field name="name">qualitylevel.tree</field>
+            <field name="model">hs_pts.cmsp.qualitylevel</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="sequence"/>
+                </tree>
+            </field>
+        </record>
+        <record id="qualitylevel_view_form" model="ir.ui.view">
+            <field name="name">qualitylevel.form</field>
+            <field name="model">hs_pts.cmsp.qualitylevel</field>
+            <field name="arch" type="xml">
+                <form string="Quality Level">
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="sequence"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                        <group name="group_log_access">
+                            <group>
+                                <field name="create_date" readonly="1"/>
+                                <field name="create_uid" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="write_date" readonly="1"/>
+                                <field name="write_uid" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="qualitylevel_view_filter" model="ir.ui.view">
+            <field name="name">workfloor.filter</field>
+            <field name="model">hs_pts.cmsp.workfloor</field>
+            <field name="arch" type="xml">
+                <search string="Quality Level">
+                    <field name="name"/>
+                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                </search>
+            </field>
+        </record>
+        <record id="qualitylevel_action" model="ir.actions.act_window">
+            <field name="name">Quality Level</field>
+            <field name="res_model">hs_pts.cmsp.qualitylevel</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="qualitylevel_menu" name="Quality Level"
+                  parent="setting_menu" action="qualitylevel_action"
+                  sequence="2"/>
+
+        <record id="workfloor_view_tree" model="ir.ui.view">
+            <field name="name">workfloor.tree</field>
+            <field name="model">hs_pts.cmsp.workfloor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="manager"/>
+                    <field name="sequence"/>
+                </tree>
+            </field>
+        </record>
+        <record id="workfloor_view_form" model="ir.ui.view">
+            <field name="name">workfloor.form</field>
+            <field name="model">hs_pts.cmsp.workfloor</field>
+            <field name="arch" type="xml">
+                <form string="WorkFloor">
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <field name="name"/>
+                                <field name="manager"/>
+                            </group>
+                            <group>
+                                <field name="sequence"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                        <group name="group_log_access">
+                            <group>
+                                <field name="create_date" readonly="1"/>
+                                <field name="create_uid" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="write_date" readonly="1"/>
+                                <field name="write_uid" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="workfloor_view_filter" model="ir.ui.view">
+            <field name="name">workfloor.filter</field>
+            <field name="model">hs_pts.cmsp.workfloor</field>
+            <field name="arch" type="xml">
+                <search string="WorkFloor">
+                    <field name="name"/>
+                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                </search>
+            </field>
+        </record>
+        <record id="workfloor_action" model="ir.actions.act_window">
+            <field name="name">Workfloor</field>
+            <field name="res_model">hs_pts.cmsp.workfloor</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="workfloor_menu" name="Work Floor"
+                  parent="setting_menu" action="workfloor_action"
+                  sequence="5"/>
+
+        <record id="workunit_view_tree" model="ir.ui.view">
+            <field name="name">workunit.tree</field>
+            <field name="model">hs_pts.cmsp.workunit</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="full_name"/>
+                    <field name="workfloor_id"/>
+                    <field name="remark"/>
+                    <field name="sequence"/>
+                </tree>
+            </field>
+        </record>
+        <record id="workunit_view_form" model="ir.ui.view">
+            <field name="name">workunit.form</field>
+            <field name="model">hs_pts.cmsp.workunit</field>
+            <field name="arch" type="xml">
+                <form string="Workunit">
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <field name="name"/>
+                                <field name="full_name"/>
+                                <field name="remark"/>
+                            </group>
+                            <group>
+                                <field name="workfloor_id"/>
+                                <field name="sequence"/>
+                                <field name="active"/>
+                            </group>
+                        </group>
+                        <group name="group_log_access">
+                            <group>
+                                <field name="create_date" readonly="1"/>
+                                <field name="create_uid" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="write_date" readonly="1"/>
+                                <field name="write_uid" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="workunit_view_filter" model="ir.ui.view">
+            <field name="name">workunit.filter</field>
+            <field name="model">hs_pts.cmsp.workunit</field>
+            <field name="arch" type="xml">
+                <search string="Workunit">
+                    <field name="name"/>
+                    <field name="workfloor_id"/>
+                    <filter string="Prepreg" name="prepreg" domain="[('workfloor_id.name','=','预浸车间')]"/>
+                    <filter string="Fabric" name="fabric" domain="[('workfloor_id.name','=','织物车间')]"/>
+                    <filter string="Resin" name="resin" domain="[('workfloor_id.name','=','树脂车间')]"/>
+                    <filter string="Sizing" name="sizing" domain="[('workfloor_id.name','=','上浆剂车间')]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Work Floor" domain="[]" context="{'group_by':'workfloor_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="workunit_action" model="ir.actions.act_window">
+            <field name="name">Workunit</field>
+            <field name="res_model">hs_pts.cmsp.workunit</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="workunit_menu" name="Work Unit"
+                  parent="setting_menu" action="workunit_action"
+                  sequence="6"/>
+
+        <record id="workgroup_view_tree" model="ir.ui.view">
+            <field name="name">workgroup.tree</field>
+            <field name="model">hs_pts.cmsp.workgroup</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="workfloor_id"/>
+                    <field name="sequence"/>
+                </tree>
+            </field>
+        </record>
+        <record id="workgroup_view_form" model="ir.ui.view">
+            <field name="name">teams.form</field>
+            <field name="model">hs_pts.cmsp.workgroup</field>
+            <field name="arch" type="xml">
+                <form string="workgroup">
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <field name="name"/>
+                                <field name="sequence"/>
+                            </group>
+                            <group>
+                                <field name="workfloor_id"/>
+                                <field name="active"/>
+                            </group>
+                            <group>
+                                <field name="groupitem_ids"></field>
+                            </group>
+                        </group>
+                        <group name="group_log_access">
+                            <group>
+                                <field name="create_date" readonly="1"/>
+                                <field name="create_uid" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="write_date" readonly="1"/>
+                                <field name="write_uid" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="workgroup_view_filter" model="ir.ui.view">
+            <field name="name">workgroup.filter</field>
+            <field name="model">hs_pts.cmsp.workgroup</field>
+            <field name="arch" type="xml">
+                <search string="workgroup">
+                    <field name="name"/>
+                    <field name="workfloor_id"/>
+                    <filter string="Prepreg" name="prepreg" domain="[('workfloor_id.name','=','预浸车间')]"/>
+                    <filter string="Fabric" name="fabric" domain="[('workfloor_id.name','=','织物车间')]"/>
+                    <filter string="Resin" name="resin" domain="[('workfloor_id.name','=','树脂车间')]"/>
+                    <filter string="Sizing" name="sizing" domain="[('workfloor_id.name','=','上浆剂车间')]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Work Floor" domain="[]" context="{'group_by':'workfloor_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="workgroup_action" model="ir.actions.act_window">
+            <field name="name">workgroup</field>
+            <field name="res_model">hs_pts.cmsp.workgroup</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="workgroup_menu" name="Work Group"
+                  parent="setting_menu" action="workgroup_action"
+                  sequence="7"/>
+
+        <record id="workgroupitem_view_tree" model="ir.ui.view">
+            <field name="name">workgroupitem.tree</field>
+            <field name="model">hs_pts.cmsp.workgroupitem</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="workgroup_id"/>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="workgroupitem_view_form" model="ir.ui.view">
+            <field name="name">workgroupitem.form</field>
+            <field name="model">hs_pts.cmsp.workgroupitem</field>
+            <field name="arch" type="xml">
+                <form string="workgroup">
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <field name="workgroup_id"/>
+                            </group>
+                            <group>
+                                <field name="employee_id"/>
+                            </group>
+                        </group>
+                        <group name="group_log_access">
+                            <group>
+                                <field name="create_date" readonly="1"/>
+                                <field name="create_uid" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="write_date" readonly="1"/>
+                                <field name="write_uid" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="workgroupitem_view_filter" model="ir.ui.view">
+            <field name="name">workgroupitem.filter</field>
+            <field name="model">hs_pts.cmsp.workgroupitem</field>
+            <field name="arch" type="xml">
+                <search string="workgroupitem">
+                    <field name="workgroup_id"/>
+                    <filter string="Prepreg" name="prepreg" domain="[('workgroup_id.workfloor_id.name','=','预浸车间')]"/>
+                    <filter string="Fabric" name="fabric" domain="[('workgroup_id.workfloor_id.name','=','织物车间')]"/>
+                    <filter string="Resin" name="resin" domain="[('workgroup_id.workfloor_id.name','=','树脂车间')]"/>
+                    <filter string="Sizing" name="sizing" domain="[('workgroup_id.workfloor_id.name','=','上浆剂车间')]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Work Group" domain="[]" context="{'group_by':'workgroup_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        <record id="workgroupitem_action" model="ir.actions.act_window">
+            <field name="name">workgroupitem</field>
+            <field name="res_model">hs_pts.cmsp.workgroupitem</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="workgroupitem_menu" name="Work Group Items"
+                  parent="workgroup_menu" action="workgroupitem_action"
+                  sequence="7"/>
+
+        <menuitem id="cmsp_Report_management_menu" name="Shift Report" parent="hs_pts.hs_pts_menu" sequence="3" />
+        <record id="fabricshiftreport_view_tree" model="ir.ui.view">
+            <field name="name">fabricshiftreport.tree</field>
+            <field name="model">hs_pts.cmsp.fabricshiftreport</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="work_date"/>
+                    <field name="workunit_id"/>
+                    <field name="workshift"/>
+                    <field name="workgroup_id"/>
+                    <field name="display_runningtime"/>
+                    <field name="model_id"/>
+                    <field name="output_length"/>
+                    <field name="inspect_length"/>
+                    <field name="reject_length"/>
+                    <field name="slitter_weight"/>
+                    <field name="rolling_number"/>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="fabricshiftreport_view_form" model="ir.ui.view">
+            <field name="name">fabricshiftreport.form</field>
+            <field name="model">hs_pts.cmsp.fabricshiftreport</field>
+            <field name="arch" type="xml">
+                <form string="fabricshiftreport">
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <field name="work_date"/>
+                                <field name="workunit_id" domain="[('workfloor_id.name', '=', '织物车间')]"/>
+                                <field name="workshift"/>
+                                <field name="output_length"/>
+                                <field name="running_time"/>
+                                <field name="reject_length"/>
+                                <field name="rolling_number"/>
+                            </group>
+                            <group>
+                                <field name="workgroup_id" domain="[('workfloor_id.name', '=', '织物车间')]"/>
+                                <field name="model_id" domain="[('materiel_name', 'like', '%织物')]"/>
+                                <field name="inspect_length"/>
+                                <field name="slitter_weight"/>
+                                <field name="employee_id"/>
+                                <field name="remark"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="fabricshiftreport_record_view_calendar" model="ir.ui.view">
+            <field name="name">fabricshiftreport.calendar</field>
+            <field name="model">hs_pts.cmsp.fabricshiftreport</field>
+            <field name="arch" type="xml">
+                <calendar string="Fabric Shift Report" color="workunit_id"
+                          date_start="work_date" date_stop="work_date"
+                          mode="month"
+                          quick_add="False" avatar_model="hs_pts.cmsp.fabricshiftreport" display="[workunit_id]  [workgroup_id]  [display_workshift]  [output_length]">
+                    <field name="workunit_id"/>
+                    <field name="display_workshift"/>
+                    <field name="work_date"/>
+                    <field name="workgroup_id"/>
+                    <field name="model_id"/>
+                    <field name="output_length"/>
+                    <field name="inspect_length"/>
+                    <field name="reject_length"/>
+                    <field name="slitter_weight"/>
+                    <field name="rolling_number"/>
+                </calendar>
+            </field>
+        </record>
+        <record id="fabricshiftreport_view_filter" model="ir.ui.view">
+            <field name="name">fabricshiftreport.filter</field>
+            <field name="model">hs_pts.cmsp.fabricshiftreport</field>
+            <field name="arch" type="xml">
+                <search string="fabricshiftreport">
+                    <field name="work_date"/>
+                    <field name="workunit_id"/>
+                    <field name="workgroup_id"/>
+                    <field name="workshift"/>
+                    <field name="employee_id"/>
+                    <filter string="Morning Shift" name="morning" domain="[('workshift','=','morning')]"/>
+                    <filter string="Middle Shift" name="middle" domain="[('workshift','=','middle')]"/>
+                    <filter string="Night Shift" name="night" domain="[('workshift','=','night')]"/>
+                </search>
+            </field>
+        </record>
+        <record id="fabricshiftreport_action" model="ir.actions.act_window">
+            <field name="name">fabricshiftreport</field>
+            <field name="res_model">hs_pts.cmsp.fabricshiftreport</field>
+            <field name="view_mode">calendar,tree,form</field>
+        </record>
+        <!--<menuitem id="fabricshiftreport_menu" name="Fabric Shift Report"-->
+                  <!--parent="cmsp_Report_management_menu" action="fabricshiftreport_action"-->
+                  <!--sequence="1"/>-->
+
+        <record id="fabricshiftreport_main_view_tree" model="ir.ui.view">
+            <field name="name">fabricshiftreport.main.tree</field>
+            <field name="model">hs_pts.cmsp.fabricshiftreport_main</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="work_date"/>
+                    <field name="workunit_id"/>
+                    <field name="workshift"/>
+                    <field name="workgroup_id"/>
+                    <!--<field name="display_runningtime"/>-->
+                    <field name="slitter_weight"/>
+                    <field name="employee_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="fabricshiftreport_main_view_form" model="ir.ui.view">
+            <field name="name">fabricshiftreport.main.form</field>
+            <field name="model">hs_pts.cmsp.fabricshiftreport_main</field>
+            <field name="arch" type="xml">
+                <form string="fabricshiftreport">
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <field name="work_date"/>
+                                <field name="workunit_id" domain="[('workfloor_id.name', '=', '织物车间')]"/>
+                                <field name="workshift"/>
+                                <!--<field name="running_time"/>-->
+                                <field name="remark"/>
+                            </group>
+                            <group>
+                                <field name="workgroup_id" domain="[('workfloor_id.name', '=', '织物车间')]"/>
+                                <field name="slitter_weight"/>
+                                <field name="employee_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Report Items">
+                                <field name="item_ids" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="fabricshiftreport_main_record_view_calendar" model="ir.ui.view">
+            <field name="name">fabricshiftreport.main.calendar</field>
+            <field name="model">hs_pts.cmsp.fabricshiftreport_main</field>
+            <field name="arch" type="xml">
+                <calendar string="Fabric Shift Report" color="workunit_id"
+                          date_start="work_date" date_stop="work_date"
+                          mode="month"
+                          quick_add="False" avatar_model="hs_pts.cmsp.fabricshiftreport" display="[workunit_id]  [workgroup_id]  [display_workshift]">
+                    <field name="workunit_id"/>
+                    <field name="display_workshift"/>
+                    <field name="work_date"/>
+                    <field name="workgroup_id"/>
+                    <field name="slitter_weight"/>
+                </calendar>
+            </field>
+        </record>
+        <record id="fabricshiftreport_main_view_filter" model="ir.ui.view">
+            <field name="name">fabricshiftreport.main.filter</field>
+            <field name="model">hs_pts.cmsp.fabricshiftreport_main</field>
+            <field name="arch" type="xml">
+                <search string="fabricshiftreport">
+                    <field name="work_date"/>
+                    <field name="workunit_id"/>
+                    <field name="workgroup_id"/>
+                    <field name="workshift"/>
+                    <field name="employee_id"/>
+                    <filter string="Morning Shift" name="morning" domain="[('workshift','=','morning')]"/>
+                    <filter string="Middle Shift" name="middle" domain="[('workshift','=','middle')]"/>
+                    <filter string="Night Shift" name="night" domain="[('workshift','=','night')]"/>
+                </search>
+            </field>
+        </record>
+        <record id="fabricshiftreport_main_action" model="ir.actions.act_window">
+            <field name="name">fabricshiftreport.main</field>
+            <field name="res_model">hs_pts.cmsp.fabricshiftreport_main</field>
+            <field name="view_mode">calendar,tree,form</field>
+        </record>
+        <menuitem id="fabricshiftreport_main_menu" name="Fabric Work Data Input"
+                  parent="cmsp_Report_management_menu" action="fabricshiftreport_main_action"
+                  sequence="2"/>
+
+        <record id="fabricshiftreport_item_view_tree" model="ir.ui.view">
+            <field name="name">fabricshiftreport.item.tree</field>
+            <field name="model">hs_pts.cmsp.fabricshiftreport_item</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <!--<field name="report_id" onchange="onchange_report()"/>-->
+                    <field name="model_id"/>
+                    <field name="display_runningtime"/>
+                    <field name="output_length"/>
+                    <field name="inspect_length"/>
+                    <field name="reject_length"/>
+                    <field name="employee_id"/>
+                    <field name="remark"/>
+                    <field name="rolling_number"/>
+                </tree>
+            </field>
+        </record>
+        <record id="fabricshiftreport_item_view_form" model="ir.ui.view">
+            <field name="name">fabricshiftreport.item.form</field>
+            <field name="model">hs_pts.cmsp.fabricshiftreport_item</field>
+            <field name="arch" type="xml">
+                <form string="fabricshiftreport">
+                    <sheet>
+                        <group name="group_top">
+                            <group>
+                                <!--<field name="report_id"/>-->
+                                <field name="model_id"/>
+                                <field name="rolling_number"/>
+                                <field name="running_time"/>
+                                <field name="output_length" />
+                            </group>
+                            <group>
+                                <field name="inspect_length"/>
+                                <field name="reject_length"/>
+                                <field name="employee_id" readonly="1"/>
+                                <field name="remark"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <sheet>
+                        <div class="oe_chatter">
+                            <field name="message_follower_ids" widget="mail_followers"/>
+                            <field name="message_ids" widget="mail_thread"/>
+                        </div>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--<record id="fabricshiftreport_item_view_filter" model="ir.ui.view">-->
+            <!--<field name="name">fabricshiftreport.item.filter</field>-->
+            <!--<field name="model">hs_pts.cmsp.fabricshiftreport_item</field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<search string="fabricshiftreport">-->
+                    <!--<field name="report_id"/>-->
+                    <!--<field name="model_id"/>-->
+                    <!--<field name="output_length"/>-->
+                    <!--<field name="inspect_length"/>-->
+                    <!--<field name="reject_length"/>-->
+                    <!--<field name="employee_id"/>-->
+                    <!--<field name="remark"/>-->
+                    <!--<field name="rolling_number"/>-->
+                <!--</search>-->
+            <!--</field>-->
+        <!--</record>-->
+        <!--<record id="fabricshiftreport_item_action" model="ir.actions.act_window">-->
+            <!--<field name="name">fabricshiftreport.item</field>-->
+            <!--<field name="res_model">hs_pts.cmsp.fabricshiftreport_item</field>-->
+            <!--<field name="view_mode">tree,form</field>-->
+        <!--</record>-->
+        <!--<menuitem id="fabricshiftreport_item_menu" name="Fabric Shift Report Item"-->
+                  <!--parent="cmsp_Report_management_menu" action="fabricshiftreport_item_action"-->
+                  <!--sequence="3"/>-->
+        <record id="hs_pts_cmsp_fabricshiftreport_report_wizard" model="ir.ui.view">
+            <field name="name">Fabric Shift Report Wizard</field>
+            <field name="model">hs_pts.cmsp.fabricshiftreport.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Report">
+                    <group>
+                        <group>
+                            <field name="workunit_id" domain="[('workfloor_id.name', '=', '织物车间')]"/>
+                            <field name="starttime" />
+                            <field name="endtime" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button type="object" name="confirm_button" string="Confirm" class="oe_highlight"/>
+                            <!--<button special="cancel" string="Cancel"/>-->
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="fabricshiftreport_report_wizard_action" model="ir.actions.act_window">
+            <field name="name">fabricshiftreport.wizard</field>
+            <field name="res_model">hs_pts.cmsp.fabricshiftreport.report.wizard</field>
+            <field name="view_mode">form</field>
+        </record>
+        <menuitem id="fabricshiftreport_wizard_menu" name="Fabric Shift Report Generate Wizard"
+                  parent="cmsp_Report_management_menu" action="fabricshiftreport_report_wizard_action"
+                  sequence="3" groups="group_pts_cmsp_production_director_fabric"/>
+
+        <act_window id="hs_pts_cmsp_prepregstorage_wizard_action"
+            name="Storage"
+            src_model="hs_pts.cmsp.prepregroll"
+            res_model="hs_pts.cmsp.prepreg.storage.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new" groups="group_pts_cmsp_production_staff_prepreg"/>
+        <act_window id="hs_pts_cmsp_fabricstorage_wizard_action"
+            name="Storage"
+            src_model="hs_pts.cmsp.fabricroll"
+            res_model="hs_pts.cmsp.fabric.storage.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new" groups="group_pts_cmsp_production_staff_fabric"/>
+        <act_window id="hs_pts_cmsp_resinstorage_wizard_action"
+            name="Storage"
+            src_model="hs_pts.cmsp.resinlot"
+            res_model="hs_pts.cmsp.resin.storage.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new" groups="group_pts_cmsp_production_staff_resin"/>
+        <act_window id="hs_pts_cmsp_sizingstorage_wizard_action"
+            name="Storage"
+            src_model="hs_pts.cmsp.sizinglot"
+            res_model="hs_pts.cmsp.sizing.storage.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new" groups="group_pts_cmsp_production_staff_sizing"/>
+
+        <act_window id="hs_pts_cmsp_prepregbatchsetquality_wizard_action"
+            name="Set Quality Level"
+            src_model="hs_pts.cmsp.prepregroll"
+            res_model="hs_pts.cmsp.prepreg.sq.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new" groups="group_pts_cmsp_planner"/>
+
+        <act_window id="hs_pts_cmsp_prepreg_wizard_action"
+            name="Export XLS"
+            src_model="hs_pts.cmsp.prepregroll"
+            res_model="hs_pts.cmsp.prepreg.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new"
+            groups="group_pts_cmsp_planner"/>
+
+        <act_window id="hs_pts_cmsp_fabricbatchsetquality_wizard_action"
+            name="Set Quality Level"
+            src_model="hs_pts.cmsp.fabricroll"
+            res_model="hs_pts.cmsp.fabric.sq.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new"
+            groups="group_pts_cmsp_planner"/>
+
+        <act_window id="hs_pts_cmsp_fabric_wizard_action"
+            name="Export XLS"
+            src_model="hs_pts.cmsp.fabricroll"
+            res_model="hs_pts.cmsp.fabric.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new"
+            groups="group_pts_cmsp_planner"/>
+
+        <act_window id="hs_pts_cmsp_resinbatchsetquality_wizard_action"
+            name="Set Quality Level"
+            src_model="hs_pts.cmsp.resinlot"
+            res_model="hs_pts.cmsp.resin.sq.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new"
+            groups="group_pts_cmsp_planner"/>
+
+        <act_window id="hs_pts_cmsp_resin_wizard_action"
+            name="Export XLS"
+            src_model="hs_pts.cmsp.resinlot"
+            res_model="hs_pts.cmsp.resin.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new"
+            groups="group_pts_cmsp_planner"/>
+
+        <act_window id="hs_pts_cmsp_sizingbatchsetquality_wizard_action"
+            name="Set Quality Level"
+            src_model="hs_pts.cmsp.sizinglot"
+            res_model="hs_pts.cmsp.sizing.sq.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new"
+            groups="group_pts_cmsp_planner"/>
+
+        <act_window id="hs_pts_cmsp_sizing_wizard_action"
+            name="Export XLS"
+            src_model="hs_pts.cmsp.sizinglot"
+            res_model="hs_pts.cmsp.sizing.wizard"
+            view_type="form" view_mode="form"
+            key2="client_action_multi" target="new"
+            groups="group_pts_cmsp_planner"/>
+
+    </data>
+</openerp>

@@ -1,0 +1,219 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hs_itm_duty
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-05-03 07:12+0000\n"
+"PO-Revision-Date: 2016-05-03 07:12+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_message_needaction
+msgid "Action Needed"
+msgstr "所需行动"
+
+#. module: hs_itm_duty
+#: model:ir.ui.view,arch_db:hs_itm_duty.duty_record_view_filter
+msgid "Archived"
+msgstr "存档"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_duty_begin_hour
+msgid "Begin Hour"
+msgstr "开始小时"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_create_uid
+msgid "Created by"
+msgstr "创建者"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_create_date
+msgid "Created on"
+msgstr "创建时间"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,help:hs_itm_duty.field_hs_itm_duty_record_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "发布到记录上的最后消息的日期"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_description
+msgid "Description"
+msgstr "说明"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: hs_itm_duty
+#: model:ir.ui.menu,name:hs_itm_duty.duty_management_menu
+msgid "Duty Management"
+msgstr "值班管理"
+
+#. module: hs_itm_duty
+#: model:ir.model,name:hs_itm_duty.model_hs_itm_duty_record
+msgid "Duty Record"
+msgstr "值班记录"
+
+#. module: hs_itm_duty
+#: model:ir.actions.act_window,name:hs_itm_duty.duty_record_action
+#: model:ir.ui.menu,name:hs_itm_duty.duty_record_menu
+#: model:ir.ui.view,arch_db:hs_itm_duty.duty_record_view_calendar
+#: model:ir.ui.view,arch_db:hs_itm_duty.duty_record_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_duty.duty_record_view_form
+#: model:ir.ui.view,arch_db:hs_itm_duty.duty_record_view_tree
+msgid "Duty Records"
+msgstr "值班记录"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_dutyday
+#: model:ir.ui.view,arch_db:hs_itm_duty.duty_record_view_filter
+msgid "Dutyday"
+msgstr "值班日期"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_employee_id
+#: model:ir.ui.view,arch_db:hs_itm_duty.duty_record_view_filter
+msgid "Employee"
+msgstr "员工"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_duty_end_hour
+msgid "End Hour"
+msgstr "结束小时"
+
+#. module: hs_itm_duty
+#: sql_constraint:hs_itm.duty.record:0
+msgid "Error ! End Hour cannot be set before Begin Hour."
+msgstr "错误 ! 结束小时不能小于开始小时."
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_message_follower_ids
+msgid "Followers"
+msgstr "关注者"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "关注者(频道)"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "关注者（合作伙伴）"
+
+#. module: hs_itm_duty
+#: model:ir.ui.view,arch_db:hs_itm_duty.duty_record_view_filter
+msgid "Group By"
+msgstr "分组"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_id
+msgid "ID"
+msgstr "ID"
+
+#. module: hs_itm_duty
+#: model:res.groups,name:hs_itm_duty.group_itm_duty_manager
+msgid "ITM Duty Manager"
+msgstr "ITM Duty 管理员"
+
+#. module: hs_itm_duty
+#: model:res.groups,name:hs_itm_duty.group_itm_duty_user
+msgid "ITM Duty User"
+msgstr "ITM Duty 用户"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,help:hs_itm_duty.field_hs_itm_duty_record_message_unread
+msgid "If checked new messages require your attention."
+msgstr "查看是否有需要留意的新信息。"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,help:hs_itm_duty.field_hs_itm_duty_record_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "确认后, 会出现新消息."
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_message_is_follower
+msgid "Is Follower"
+msgstr "是否关注者"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_message_last_post
+msgid "Last Message Date"
+msgstr "最后消息日期"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record___last_update
+msgid "Last Modified on"
+msgstr "最后修改时间"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_write_uid
+msgid "Last Updated by"
+msgstr "最后更新"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_write_date
+msgid "Last Updated on"
+msgstr "最后更新于"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_message_ids
+msgid "Messages"
+msgstr "消息"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_message_needaction_counter
+msgid "Number of Actions"
+msgstr "动作的序列号"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,help:hs_itm_duty.field_hs_itm_duty_record_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "需要动作的消息编号"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,help:hs_itm_duty.field_hs_itm_duty_record_message_unread_counter
+msgid "Number of unread messages"
+msgstr "未读的消息数量"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,help:hs_itm_duty.field_hs_itm_duty_record_user_id
+msgid "Related user name for the resource to manage its access."
+msgstr "用于管理资源访问权限的用户名"
+
+#. module: hs_itm_duty
+#: model:res.groups,comment:hs_itm_duty.group_itm_duty_manager
+msgid "The user will be able to manage all duty records."
+msgstr "该用户可以管理所有值班记录."
+
+#. module: hs_itm_duty
+#: model:res.groups,comment:hs_itm_duty.group_itm_duty_user
+msgid "The user will be able to manage self duty records, view others' duty records."
+msgstr "用户可以管理自己负责的值班数据，查看别人负责的值班数据"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_message_unread
+msgid "Unread Messages"
+msgstr "未读消息"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "未读消息计数器"
+
+#. module: hs_itm_duty
+#: model:ir.model.fields,field_description:hs_itm_duty.field_hs_itm_duty_record_user_id
+msgid "User"
+msgstr "用户"
+

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="paperformat_prepregroll_label" model="report.paperformat">
+            <field name="name">Prepreg/Fabric label fromat</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">111</field>
+            <field name="page_width">153</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">0</field>
+            <field name="dpi">203</field>
+        </record>
+
+        <record id="paperformat_fabric_label" model="report.paperformat">
+            <field name="name">Fabric label fromat</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">107</field>
+            <field name="page_width">153</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">0</field>
+            <field name="dpi">203</field>
+        </record>
+
+        <record id="paperformat_resonlot_label" model="report.paperformat">
+            <field name="name">Resin/Sizing label fromat</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">103</field>
+            <field name="page_width">98</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">0</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">0</field>
+            <field name="dpi">203</field>
+        </record>
+
+        <!-- QWeb Reports -->
+        <report
+            id="cmsp_prepregroll"
+            model="hs_pts.cmsp.prepregroll"
+            string="PrepregLabel"
+            report_type="qweb-pdf"
+            name="hs_pts_cmsp.prepregrolllabel1"
+            file="hs_pts_cmsp.prepregrolllabel1"
+            paperformat="hs_pts_cmsp.paperformat_prepregroll_label"
+        />
+
+        <report
+            id="cmsp_fabricroll"
+            model="hs_pts.cmsp.fabricroll"
+            string="FabricLabel"
+            report_type="qweb-pdf"
+            name="hs_pts_cmsp.fabriclabel"
+            file="hs_pts_cmsp.fabriclabel"
+            paperformat="hs_pts_cmsp.paperformat_prepregroll_label"
+        />
+
+        <report
+            id="cmsp_resinlot"
+            model="hs_pts.cmsp.resinlot"
+            string="ResinLabel"
+            report_type="qweb-pdf"
+            name="hs_pts_cmsp.resinlabel"
+            file="hs_pts_cmsp.resinlabel"
+            paperformat="hs_pts_cmsp.paperformat_resonlot_label"
+        />
+
+        <report
+            id="cmsp_sizinglot"
+            model="hs_pts.cmsp.sizinglot"
+            string="SizingLabel"
+            report_type="qweb-pdf"
+            name="hs_pts_cmsp.sizinglabel"
+            file="hs_pts_cmsp.sizinglabel"
+            paperformat="hs_pts_cmsp.paperformat_resonlot_label"
+        />
+
+        </data>
+    </openerp>

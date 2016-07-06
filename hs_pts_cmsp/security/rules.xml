@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="cmsp_productionstaff_rule" model="ir.rule">
+            <field name="name">productionstaff can be CURD the prepregroll.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_prepregroll"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_staff'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="cmsp_shiftreport_fabric_writer_rule_prepreg" model="ir.rule">
+            <field name="name">shift report writer can not read prepreg.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_prepregroll"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_fabricshiftreportwriter'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+        </record>
+
+        <record id="cmsp_planner_rule" model="ir.rule">
+            <field name="name">planner can be CURD the plan.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_planner'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('planner.user_id', '=', user.id)]</field>
+        </record>
+        <record id="cmsp_planner_rule_del_plan" model="ir.rule">
+            <field name="name">planner can be CURD the plan.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_planner'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">[('planner.user_id', '=', user.id), ('state', '!=', 'draft')]</field>
+        </record>
+
+        <record id="cmsp_director_prepreg_rule" model="ir.rule">
+            <field name="name">prepreg director can be read all plan.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_director_prepreg'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('product_type', '=', 'prepreg')]</field>
+        </record>
+        <record id="cmsp_director_fabric_rule" model="ir.rule">
+            <field name="name">fabric director can be read all plan.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_director_fabric'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('product_type', '=', 'fabric')]</field>
+        </record>
+        <record id="cmsp_director_resin_rule" model="ir.rule">
+            <field name="name">resin director can be read all plan.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_director_resin'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">['|', ('product_type', '=', 'resin'), ('product_type', '=', 'sizing')]</field>
+            <!--<field name="domain_force">[(1, '=', 1)]</field>-->
+        </record>
+        <record id="cmsp_director_sizing_rule" model="ir.rule">
+            <field name="name">sizing director can be read all plan.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_director_sizing'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('product_type', '=', 'sizing')]</field>
+        </record>
+        <record id="cmsp_process_prepreg_rule_plan" model="ir.rule">
+            <field name="name">process PE prepreg can be read the plan its state is 'ps'.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_processconfirm_prepreg'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('product_type', '=', 'prepreg')]</field>
+        </record>
+        <record id="cmsp_process_fabric_rule_plan" model="ir.rule">
+            <field name="name">process PE fabric can be read the plan its state is 'ps'.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_processconfirm_fabric'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('product_type', '=', 'fabric')]</field>
+        </record>
+        <record id="cmsp_process_resinsizing_rule_plan" model="ir.rule">
+            <field name="name">process PE resin sizing can be read the plan its state is 'ps'.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_processconfirm_resinsizing'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">['|', ('product_type', '=', 'resin'), ('product_type', '=', 'sizing')]</field>
+        </record>
+
+        <record id="cmsp_doc_prepreg_rule_plan" model="ir.rule">
+            <field name="name">doc prepreg can be read the plan its state is 'dc'.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_docprepare_prepreg'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('product_type', '=', 'prepreg')]</field>
+        </record>
+        <record id="cmsp_doc_fabric_rule_plan" model="ir.rule">
+            <field name="name">doc fabric can be read the plan its state is 'dc'.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_docprepare_fabric'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('product_type', '=', 'fabric')]</field>
+        </record>
+        <record id="cmsp_doc_resinsizing_rule_plan" model="ir.rule">
+            <field name="name">doc resin sizing can be read the plan its state is 'dc'.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_docprepare_resinsizing'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">['|', ('product_type', '=', 'resin'), ('product_type', '=', 'sizing')]</field>
+        </record>
+
+        <record id="cmsp_shiftreport_fabric_writer_rule_plan" model="ir.rule">
+            <field name="name">shift report writer can be read all plan.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_plan"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_fabricshiftreportwriter'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('product_type', '=', 'fabric')]</field>
+        </record>
+
+        <record id="cmsp_planner_rule_task" model="ir.rule">
+            <field name="name">planner can be CURD the task.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_task"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_planner'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('plan_id.planner.user_id', '=', user.id)]</field>
+        </record>
+        <record id="cmsp_director_prepreg_rule_task" model="ir.rule">
+            <field name="name">prepreg director can be read all task.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_task"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_director_prepreg'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('plan_id.product_type', '=', 'prepreg')]</field>
+        </record>
+        <record id="cmsp_director_fabric_rule_task" model="ir.rule">
+            <field name="name">fabric director can be read all task.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_task"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_director_fabric'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('plan_id.product_type', '=', 'fabric')]</field>
+        </record>
+        <record id="cmsp_director_resin_rule_task" model="ir.rule">
+            <field name="name">resin director can be read all task.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_task"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_director_resin'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">['|', ('plan_id.product_type', '=', 'resin'), ('plan_id.product_type', '=', 'sizing')]</field>
+        </record>
+        <record id="cmsp_director_sizing_rule_task" model="ir.rule">
+            <field name="name">sizing director can be read all task.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_task"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_director_sizing'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('plan_id.product_type', '=', 'sizing')]</field>
+        </record>
+
+        <record id="cmsp_shiftreport_fabric_writer_rule_task" model="ir.rule">
+            <field name="name">fabric shift report writer can be read all task.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_task"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_fabricshiftreportwriter'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('plan_id.product_type', '=', 'fabric')]</field>
+        </record>
+
+        <record id="cmsp_staff_prepreg_rule_task" model="ir.rule">
+            <field name="name">staffprepreg can be read prepreg task.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_task"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_staff_prepreg'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('plan_id.product_type', '=', 'prepreg')]</field>
+        </record>
+        <record id="cmsp_staff_fabric_rule_task" model="ir.rule">
+            <field name="name">stafffabric can be read fabric task.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_task"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_staff_fabric'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('plan_id.product_type', '=', 'fabric')]</field>
+        </record>
+        <record id="cmsp_staff_resin_rule_task" model="ir.rule">
+            <field name="name">staffresin can be read resin task.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_task"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_staff_resin'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('plan_id.product_type', '=', 'resin')]</field>
+        </record>
+        <record id="cmsp_staff_sizing_rule_task" model="ir.rule">
+            <field name="name">staffsizing can be read sizing task.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_task"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_production_staff_sizing'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('plan_id.product_type', '=', 'sizing')]</field>
+        </record>
+
+        <record id="cmsp_shiftreport_fabric_writer_rule_shiftreport" model="ir.rule">
+            <field name="name">fabric shift report writer can be manager the shift report which is created by himself.</field>
+            <field name="model_id" ref="model_hs_pts_cmsp_fabricshiftreport"/>
+            <field name="groups" eval="[(4, ref('group_pts_cmsp_fabricshiftreportwriter'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[ ('employee_id.user_id', '=', user.id)]</field>
+        </record>
+    </data>
+</openerp>

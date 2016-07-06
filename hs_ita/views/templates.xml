@@ -1,0 +1,31 @@
+<openerp>
+    <data>
+        <template id="employee_hs_ita_asset_report_template">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                        <div class="page">
+                            <h2>Employee's IT Assets</h2>
+                            <p t-field="o.name"/>
+                            <ul>
+                                <t t-foreach="o.hs_ita_asset_ids" t-as="f">
+                                    <li>
+                                        <span t-field="f.asset_no"/>
+                                        <span t-field="f.category_id"/>
+                                        <t t-foreach="f.attribute_ids" t-as="x">
+                                            <span t-field="x.display_name"/>
+                                        </t>
+                                        <span t-field="f.model_no"/>
+                                        <span t-field="f.serial_no"/>
+                                        <span t-field="f.assign_date"/>
+                                        <span t-field="f.use"/>
+                                    </li>
+                                </t>
+                            </ul>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="module_category_hengshen" model="ir.module.category">
+            <field name="name">HengShen Apps</field>
+            <field name="sequence" eval="20" />
+        </record>
+
+    </data>
+</odoo>
+

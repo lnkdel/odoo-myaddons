@@ -1,0 +1,56 @@
+/*adjust form view's width*/
+
+.openerp .oe_list_editable .oe_list_content td.oe_list_field_cell {
+  padding: 4px 6px 3px;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #cacaca;
+}
+
+.openerp .oe_list_content > tbody > tr > td.oe_list_field_cell {
+  padding: 3px 6px;
+  white-space: pre-line;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #cacaca;
+}
+
+.openerp .oe_form_sheet_width
+{
+  max-width: none;
+  min-width: 800px;
+}
+
+.openerp .oe_form_sheetbg
+{
+  padding: 16px;
+}
+
+.openerp .oe_form div.oe_chatter {
+  max-width: 100%;
+}
+
+.openerp .oe-view-manager-view-form {
+  min-width: 840px;
+}
+
+/*adjust date field input's width*/
+
+.openerp .oe_form_editable .oe_form .oe_form_field_date input {
+  width: 200px;
+}
+
+/*make tree view scrollable*/
+
+.openerp .oe_form_field_one2many, .openerp .oe_form_field_many2many {
+  overflow-y: hidden;
+  position:relative;
+}
+
+.openerp .oe_list_content td, .openerp .oe_list_content th {
+  white-space: nowrap;
+}
+
+.openerp .oe_list_content > tbody > tr > td.oe_list_field_cell {
+  white-space: nowrap;
+}

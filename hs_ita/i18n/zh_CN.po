@@ -1,0 +1,700 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hs_ita
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-19 04:59+0000\n"
+"PO-Revision-Date: 2016-04-19 04:59+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_message_needaction
+msgid "Action Needed"
+msgstr "所需行动"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_active
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_attribute_active
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_brand_active
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category_active
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_active
+msgid "Active?"
+msgstr "有效？"
+
+#. module: hs_ita
+#: sql_constraint:hs_ita.asset:0
+msgid "Another asset already exists with this Asset No.!"
+msgstr "重复的资产编号！"
+
+#. module: hs_ita
+#: sql_constraint:hs_ita.brand:0
+msgid "Another brand already exists with this name!"
+msgstr "重复的品牌名称！"
+
+#. module: hs_ita
+#: sql_constraint:hs_ita.category:0
+msgid "Another category already exists with this name!"
+msgstr "重复的类别名称！"
+
+#. module: hs_ita
+#: sql_constraint:hs_ita.count.item:0
+msgid "Another item already exists with this Asset No.!"
+msgstr "盘点项目中存在重复的资产编号！"
+
+#. module: hs_ita
+#: model:ir.ui.view,arch_db:hs_ita.asset_view_filter
+#: model:ir.ui.view,arch_db:hs_ita.attribute_view_filter
+#: model:ir.ui.view,arch_db:hs_ita.brand_view_filter
+#: model:ir.ui.view,arch_db:hs_ita.category_view_filter
+#: model:ir.ui.view,arch_db:hs_ita.location_view_filter
+msgid "Archived"
+msgstr "归档"
+
+#. module: hs_ita
+#: model:ir.model,name:hs_ita.model_hs_ita_asset
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_asset_id
+#: model:ir.ui.view,arch_db:hs_ita.asset_view_form
+msgid "Asset"
+msgstr "资产"
+
+#. module: hs_ita
+#: model:ir.ui.view,arch_db:hs_ita.count_view_form
+msgid "Asset Count Subject"
+msgstr "资产盘点主题"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_image
+msgid "Asset Image"
+msgstr "资产照片"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_asset_no
+msgid "Asset No."
+msgstr "资产编号"
+
+#. module: hs_ita
+#: code:addons/hs_ita/models/models.py:114
+#, python-format
+msgid "Asset Number must have 9 chars!"
+msgstr "资产编号必须为9位！"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category_asset_qty
+msgid "Asset Qty"
+msgstr "资产数量"
+
+#. module: hs_ita
+#: model:ir.actions.act_window,name:hs_ita.asset_action
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_brand_asset_ids
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category_asset_ids
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_wizard_asset_ids
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_asset_ids
+#: model:ir.ui.menu,name:hs_ita.asset_menu
+#: model:ir.ui.view,arch_db:hs_ita.asset_view_filter
+#: model:ir.ui.view,arch_db:hs_ita.count_wizard_view
+msgid "Assets"
+msgstr "资产"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_assign_date
+msgid "Assigned Date"
+msgstr "发放日期"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_department_id
+msgid "Assigned to Department"
+msgstr "发放到部门"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_employee_id
+msgid "Assigned to Employee"
+msgstr "发放到员工"
+
+#. module: hs_ita
+#: model:ir.model,name:hs_ita.model_hs_ita_attribute
+#: model:ir.ui.view,arch_db:hs_ita.attribute_view_form
+msgid "Attribute"
+msgstr "属性"
+
+#. module: hs_ita
+#: model:ir.actions.act_window,name:hs_ita.attribute_action
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_attribute_ids
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category_attribute_ids
+#: model:ir.ui.menu,name:hs_ita.attribute_menu
+#: model:ir.ui.view,arch_db:hs_ita.attribute_view_filter
+msgid "Attributes"
+msgstr "属性"
+
+#. module: hs_ita
+#: model:ir.model,name:hs_ita.model_hs_ita_brand
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_brand_id
+#: model:ir.ui.view,arch_db:hs_ita.brand_view_form
+msgid "Brand"
+msgstr "品牌"
+
+#. module: hs_ita
+#: model:ir.actions.act_window,name:hs_ita.brand_action
+#: model:ir.ui.menu,name:hs_ita.brand_menu
+#: model:ir.ui.view,arch_db:hs_ita.brand_view_filter
+msgid "Brands"
+msgstr "品牌"
+
+#. module: hs_ita
+#: model:ir.ui.view,arch_db:hs_ita.count_wizard_view
+msgid "Cancel"
+msgstr "取消"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_cancel_date
+msgid "Cancel Date"
+msgstr "注销日期"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_cancel_note
+msgid "Cancel Note"
+msgstr "注销备注"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_cancel_type
+msgid "Cancel Type"
+msgstr "注销类型"
+
+#. module: hs_ita
+#: model:ir.ui.view,arch_db:hs_ita.asset_view_form
+msgid "Cancellation Information"
+msgstr "注销信息"
+
+#. module: hs_ita
+#: selection:hs_ita.count,state:0
+msgid "Cancelled"
+msgstr "已取消"
+
+#. module: hs_ita
+#: model:ir.actions.act_window,name:hs_ita.category_action
+#: model:ir.ui.menu,name:hs_ita.category_menu
+#: model:ir.ui.view,arch_db:hs_ita.category_view_filter
+msgid "Categories"
+msgstr "类别"
+
+#. module: hs_ita
+#: model:ir.model,name:hs_ita.model_hs_ita_category
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_category_id
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_attribute_category_id
+#: model:ir.ui.view,arch_db:hs_ita.asset_view_filter
+#: model:ir.ui.view,arch_db:hs_ita.category_view_form
+msgid "Category"
+msgstr "类别"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_child_ids
+msgid "Child Locations"
+msgstr "子位置"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_complete_name
+msgid "Complete Name"
+msgstr "完整名称"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_cost
+msgid "Cost"
+msgstr "费用"
+
+#. module: hs_ita
+#: model:ir.model,name:hs_ita.model_hs_ita_count
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_count_id
+#: model:ir.ui.view,arch_db:hs_ita.count_view_form
+msgid "Count"
+msgstr "盘点"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_count_date
+msgid "Count Date"
+msgstr "盘点日期"
+
+#. module: hs_ita
+#: model:ir.ui.view,arch_db:hs_ita.asset_view_form
+msgid "Count Information"
+msgstr "盘点信息"
+
+#. module: hs_ita
+#: model:ir.model,name:hs_ita.model_hs_ita_count_item
+#: model:ir.ui.view,arch_db:hs_ita.count_item_view_form
+msgid "Count Item"
+msgstr "盘点项目"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_ids
+#: model:ir.ui.view,arch_db:hs_ita.count_item_view_tree
+#: model:ir.ui.view,arch_db:hs_ita.count_view_form
+msgid "Count Items"
+msgstr "盘点项目"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_count_item_ids
+msgid "Count Records"
+msgstr "盘点记录"
+
+#. module: hs_ita
+#: model:ir.actions.act_window,name:hs_ita.count_wizard_action
+#: model:ir.model,name:hs_ita.model_hs_ita_count_wizard
+#: model:ir.ui.view,arch_db:hs_ita.count_wizard_view
+msgid "Count Wizard"
+msgstr "盘点向导"
+
+#. module: hs_ita
+#: model:ir.actions.act_window,name:hs_ita.count_action
+#: model:ir.ui.menu,name:hs_ita.count_menu
+#: model:ir.ui.view,arch_db:hs_ita.count_view_tree
+msgid "Counts"
+msgstr "盘点"
+
+#. module: hs_ita
+#: model:ir.ui.view,arch_db:hs_ita.count_wizard_view
+msgid "Create"
+msgstr "创建"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_create_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_attribute_create_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_brand_create_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category_create_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_create_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_create_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_wizard_create_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_create_uid
+msgid "Created by"
+msgstr "创建者"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_create_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_attribute_create_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_brand_create_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category_create_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_create_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_create_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_wizard_create_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_create_date
+msgid "Created on"
+msgstr "创建于"
+
+#. module: hs_ita
+#: selection:hs_ita.asset,cancel_type:0
+#: selection:hs_ita.count.item,state:0
+msgid "Damaged"
+msgstr "损坏"
+
+#. module: hs_ita
+#: model:ir.model.fields,help:hs_ita.field_hs_ita_asset_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "发布到记录上的最后消息的日期"
+
+#. module: hs_ita
+#: model:ir.ui.view,arch_db:hs_ita.asset_view_filter
+msgid "Department"
+msgstr "部门"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_display_name
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_attribute_display_name
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_brand_display_name
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category_display_name
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_display_name
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_display_name
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_wizard_display_name
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: hs_ita
+#: selection:hs_ita.count,state:0
+msgid "Done"
+msgstr "完成"
+
+#. module: hs_ita
+#: selection:hs_ita.count,state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: hs_ita
+#: model:ir.model,name:hs_ita.model_hr_employee
+#: model:ir.ui.view,arch_db:hs_ita.asset_view_filter
+msgid "Employee"
+msgstr "员工"
+
+#. module: hs_ita
+#: model:ir.actions.report.xml,name:hs_ita.hr_employee_hs_ita_asset_report
+msgid "Employee IT Assets Report"
+msgstr "员工 IT 资产报表"
+
+#. module: hs_ita
+#: model:ir.ui.view,arch_db:hs_ita.employee_hs_ita_asset_report_template
+msgid "Employee's IT Assets"
+msgstr "员工 IT 资产"
+
+#. module: hs_ita
+#: code:addons/hs_ita/models/location.py:28
+#: constraint:hs_ita.location:0
+#, python-format
+msgid "Error! You cannot create recursive locations."
+msgstr "错误！ 您不能创建循环包含的位置。"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_employee_id
+msgid "Executor"
+msgstr "执行者"
+
+#. module: hs_ita
+#: selection:hs_ita.asset,use:0
+msgid "External Office"
+msgstr "外网办公"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_finance_asset_no
+msgid "Finance Asset No."
+msgstr "财务资产编号"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_message_follower_ids
+msgid "Followers"
+msgstr "关注者"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "关注者(频道)"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "关注者（合作伙伴）"
+
+#. module: hs_ita
+#: selection:hs_ita.asset,use:0
+msgid "General Office"
+msgstr "一般办公"
+
+#. module: hs_ita
+#: model:ir.ui.view,arch_db:hs_ita.asset_view_filter
+msgid "Group By"
+msgstr "分组"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_id
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_attribute_id
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_brand_id
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category_id
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_id
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_id
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_wizard_id
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_id
+msgid "ID"
+msgstr "ID"
+
+#. module: hs_ita
+#: model:ir.ui.menu,name:hs_ita.asset_management_menu
+msgid "IT Asset Management"
+msgstr "IT 资产管理"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hr_employee_hs_ita_asset_ids
+msgid "IT Assets"
+msgstr "IT 资产"
+
+#. module: hs_ita
+#: selection:hs_ita.asset,use:0
+msgid "IT Infrastructure"
+msgstr "IT 设施"
+
+#. module: hs_ita
+#: model:ir.ui.menu,name:hs_ita.hs_ita_menu
+msgid "ITA"
+msgstr "ITA"
+
+#. module: hs_ita
+#: model:ir.ui.view,arch_db:hs_ita.asset_view_form
+msgid "ITA Asset Number"
+msgstr "ITA 资产编号"
+
+#. module: hs_ita
+#: model:res.groups,name:hs_ita.group_ita_manager
+msgid "ITA Manager"
+msgstr "ITA 管理员"
+
+#. module: hs_ita
+#: model:ir.model.fields,help:hs_ita.field_hs_ita_asset_message_unread
+msgid "If checked new messages require your attention."
+msgstr "查看是否有需要留意的新信息。"
+
+#. module: hs_ita
+#: model:ir.model.fields,help:hs_ita.field_hs_ita_asset_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "确认后, 会出现新消息."
+
+#. module: hs_ita
+#: selection:hs_ita.asset,use:0
+msgid "Internal Office"
+msgstr "内网办公"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_message_is_follower
+msgid "Is Follower"
+msgstr "是否关注者"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_qty
+msgid "Item Qty"
+msgstr "项目数量"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_message_last_post
+msgid "Last Message Date"
+msgstr "最后消息日期"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset___last_update
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_attribute___last_update
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_brand___last_update
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category___last_update
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count___last_update
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item___last_update
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_wizard___last_update
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_write_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_attribute_write_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_brand_write_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category_write_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_write_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_wizard_write_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_write_uid
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_write_uid
+msgid "Last Updated by"
+msgstr "最后更新"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_write_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_attribute_write_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_brand_write_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category_write_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_write_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_wizard_write_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_write_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_write_date
+msgid "Last Updated on"
+msgstr "最后更新"
+
+#. module: hs_ita
+#: model:ir.model,name:hs_ita.model_hs_ita_location
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_location_id
+#: model:ir.ui.view,arch_db:hs_ita.asset_view_filter
+#: model:ir.ui.view,arch_db:hs_ita.location_view_form
+msgid "Location"
+msgstr "位置"
+
+#. module: hs_ita
+#: model:ir.actions.act_window,name:hs_ita.location_action
+#: model:ir.ui.menu,name:hs_ita.location_menu
+#: model:ir.ui.view,arch_db:hs_ita.location_view_filter
+msgid "Locations"
+msgstr "位置"
+
+#. module: hs_ita
+#: selection:hs_ita.asset,cancel_type:0
+msgid "Lost"
+msgstr "丢失"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_message_ids
+msgid "Messages"
+msgstr "消息"
+
+#. module: hs_ita
+#: selection:hs_ita.count.item,state:0
+msgid "Missed"
+msgstr "未找到"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_model_no
+msgid "Model No."
+msgstr "型号"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_attribute_name
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_brand_name
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category_name
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_name
+msgid "Name"
+msgstr "名称"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_note
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_note
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_note
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_wizard_note
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_note
+msgid "Note"
+msgstr "备注"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_message_needaction_counter
+msgid "Number of Actions"
+msgstr "动作的序列号"
+
+#. module: hs_ita
+#: model:ir.model.fields,help:hs_ita.field_hs_ita_asset_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "需要动作的消息编号"
+
+#. module: hs_ita
+#: model:ir.model.fields,help:hs_ita.field_hs_ita_asset_message_unread_counter
+msgid "Number of unread messages"
+msgstr "未读的消息数量"
+
+#. module: hs_ita
+#: selection:hs_ita.count.item,state:0
+msgid "OK"
+msgstr "正常"
+
+#. module: hs_ita
+#: selection:hs_ita.count,state:0
+msgid "Open"
+msgstr "开启"
+
+#. module: hs_ita
+#: selection:hs_ita.asset,cancel_type:0
+msgid "Other"
+msgstr "其它"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_po_no
+msgid "PO Number"
+msgstr "采购订单号"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_parent_id
+msgid "Parent Location"
+msgstr "父位置"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_plan_date
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_wizard_plan_date
+msgid "Plan Date"
+msgstr "计划日期"
+
+#. module: hs_ita
+#: model:ir.ui.view,arch_db:hs_ita.asset_view_form
+msgid "Product Information"
+msgstr "产品信息"
+
+#. module: hs_ita
+#: selection:hs_ita.asset,use:0
+msgid "Production Equipment"
+msgstr "生产设备"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_item_state
+msgid "Result"
+msgstr "结果"
+
+#. module: hs_ita
+#: selection:hs_ita.asset,cancel_type:0
+msgid "Retired"
+msgstr "退役"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_attribute_sequence
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_brand_sequence
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_category_sequence
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_location_sequence
+msgid "Sequence"
+msgstr "序列"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_serial_no
+msgid "Serial No."
+msgstr "序列号"
+
+#. module: hs_ita
+#: model:ir.ui.menu,name:hs_ita.setting_menu
+msgid "Settings"
+msgstr "设置"
+
+#. module: hs_ita
+#: selection:hs_ita.asset,cancel_type:0
+msgid "Sold"
+msgstr "出售"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_start_date
+msgid "Start Date"
+msgstr "开始日期"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_state
+msgid "State"
+msgstr "状态"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_name
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_count_wizard_name
+msgid "Subject"
+msgstr "主题"
+
+#. module: hs_ita
+#: model:res.groups,comment:hs_ita.group_ita_manager
+msgid "The user will be able to manage ITA records."
+msgstr "用户可以管理 ITA 数据。"
+
+#. module: hs_ita
+#: model:ir.model.fields,help:hs_ita.field_hs_ita_asset_image
+msgid "This field holds the image used as picture for the asset."
+msgstr "这个字段用于保存资产的照片。"
+
+#. module: hs_ita
+#: selection:hs_ita.count.item,state:0
+msgid "Unknown"
+msgstr "未知"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_message_unread
+msgid "Unread Messages"
+msgstr "未读消息"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "未读消息计数器"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_use
+msgid "Use"
+msgstr "用途"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_attribute_value
+msgid "Value"
+msgstr "数值"
+
+#. module: hs_ita
+#: model:ir.model.fields,field_description:hs_ita.field_hs_ita_asset_warranty
+msgid "Warranty"
+msgstr "保修期"
+
+#. module: hs_ita
+#: code:addons/hs_ita/models/models.py:34
+#, python-format
+msgid "You cannot delete a category containing assets."
+msgstr "您不能删除一个包含资产的类别。"
+

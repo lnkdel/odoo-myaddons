@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="group_ita_manager" model="res.groups">
+            <field name="name">ITA Manager</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="comment">The user will be able to manage ITA records.</field>
+        </record>
+
+    </data>
+</odoo>
+

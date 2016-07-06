@@ -1,0 +1,302 @@
+<openerp>
+    <data>
+        <template id="prepregrolllabel1">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="prepregroll">
+                    <div class="page">
+                        <div class="row">
+                            <t t-if="prepregroll.model_id.packing=='standard'">
+                                <img src="/hs_pts_cmsp/static/description/prepreg_roll_stand.png"
+                                 border="0"/>
+                            </t>
+                            <t t-if="prepregroll.model_id.packing=='neutral'">
+                                <img src="/hs_pts_cmsp/static/description/prepreg_roll_neu.png"
+                                 border="0"/>
+                            </t>
+                            <t t-if="prepregroll.model_id.packing=='simpleness'">
+                                <img src="/hs_pts_cmsp/static/description/prepreg_roll_neu.png"
+                                 border="0"/>
+                            </t>
+                            <div style="position:absolute; left:220px; top:180px; font-family:Consolas; font-size:22.5pt">
+                                <span t-field="prepregroll.model_id.name"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:280px; font-family:Consolas; font-size:23pt">
+                                <span t-field="prepregroll.model_id.product_no"/>
+                            </div>
+                            <div style="position:absolute; left:1050px; top:280px; font-family:Consolas; font-size:16.5pt">
+                                <t t-if="prepregroll.model_id.iscutting==0" >否</t>
+                                <t t-if="prepregroll.model_id.iscutting==1" >是</t>
+                            </div>
+                            <div style="position:absolute; left:220px; top:380px; font-family:Consolas; font-size:19pt">
+                                <span t-field="prepregroll.id"/>
+                            </div>
+                            <div style="position:absolute; left:650px; top:380px; font-family:Consolas; font-size:19pt">
+                                <span t-field="prepregroll.roll_length"/> * <span t-field="prepregroll.model_id.width"/>
+                            </div>
+                            <div style="position:absolute; left:1050px; top:380px; font-family:Consolas; font-size:19pt">
+                                <span t-field="prepregroll.area"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:480px; font-family:Consolas; font-size:18.5pt">
+                                <span t-field="prepregroll.product_date" t-field-options='{"format": "dd.MM.YYYY"}'/>
+                            </div>
+                            <div style="position:absolute; left:650px; top:480px; font-family:宋体; font-size:17pt">
+                                <span t-field="prepregroll.lot_no"/>
+                            </div>
+                            <div style="position:absolute; left:1050px; top:480px; font-family:Consolas; font-size:16pt">
+                                <span t-field="prepregroll.workgroup_id.name"/>
+                            </div>
+                            <div style="position:absolute; left:910px; top:540px; font-family:Consolas; font-size:12pt; text-align:center; ">
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', prepregroll.barcode_no, 250, 250)" style="width:250px;height:250px"/>
+                                <p t-field="prepregroll.barcode_no"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="row">
+                            <t t-if="prepregroll.model_id.packing=='standard'">
+                                <img src="/hs_pts_cmsp/static/description/prepreg_carton_stand.png"
+                                 border="0"/>
+                            </t>
+                            <t t-if="prepregroll.model_id.packing=='neutral'">
+                                <img src="/hs_pts_cmsp/static/description/prepreg_carton_neu.png"
+                                 border="0"/>
+                            </t>
+                            <t t-if="prepregroll.model_id.packing=='simpleness'">
+                                <img src="/hs_pts_cmsp/static/description/prepreg_carton_neu.png"
+                                 border="0"/>
+                            </t>
+                            <div style="position:absolute; left:220px; top:180px; font-family:Consolas; font-size:22.5pt">
+                                <span t-field="prepregroll.model_id.name"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:280px; font-family:Consolas; font-size:23pt">
+                                <span t-field="prepregroll.model_id.product_no"/>
+                            </div>
+                            <div style="position:absolute; left:1010px; top:280px; font-family:Consolas; font-size:16.5pt; font-weight:bold">
+                                <t t-if="prepregroll.model_id.iscutting==0" >否</t>
+                                <t t-if="prepregroll.model_id.iscutting==1" >是</t>
+                            </div>
+                            <div style="position:absolute; left:220px; top:380px; font-family:Consolas; font-size:21pt">
+                                <span t-field="prepregroll.roll_length"/> * <span t-field="prepregroll.model_id.width"/>
+                            </div>
+                            <div style="position:absolute; left:720px; top:380px; font-family:Consolas; font-weight:bold; font-size:19pt">
+                                <span t-field="prepregroll.id"/>
+                            </div>
+                            <div style="position:absolute; left:1010px; top:380px; font-family:Consolas; font-size:29.5pt">
+                                <span t-field="prepregroll.area"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:480px; font-family:Consolas; font-size:31pt">
+                                <span t-field="prepregroll.lot_no"/>
+                            </div>
+                            <div style="position:absolute; left:720px; top:480px; font-family:宋体; font-size:22.5pt">
+                                <span t-field="prepregroll.gross_weight"/>
+                            </div>
+                            <div style="position:absolute; left:890px; top:500px; font-family:Consolas; font-size:12pt; text-align:center; ">
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', prepregroll.barcode_no, 300, 250)" style="width:300px;height:250px"/>
+                                <p t-field="prepregroll.barcode_no"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page">
+                        <div class="row">
+                            <t t-if="prepregroll.model_id.packing=='standard'">
+                                <img src="/hs_pts_cmsp/static/description/prepreg_carton_stand.png"
+                                 border="0"/>
+                            </t>
+                            <t t-if="prepregroll.model_id.packing=='neutral'">
+                                <img src="/hs_pts_cmsp/static/description/prepreg_carton_neu.png"
+                                 border="0"/>
+                            </t>
+                            <t t-if="prepregroll.model_id.packing=='simpleness'">
+                                <img src="/hs_pts_cmsp/static/description/prepreg_carton_neu.png"
+                                 border="0"/>
+                            </t>
+                            <div style="position:absolute; left:220px; top:180px; font-family:Consolas; font-size:22.5pt">
+                                <span t-field="prepregroll.model_id.name"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:280px; font-family:Consolas; font-size:23pt">
+                                <span t-field="prepregroll.model_id.product_no"/>
+                            </div>
+                            <div style="position:absolute; left:1010px; top:280px; font-family:Consolas; font-size:16.5pt; font-weight:bold">
+                                <t t-if="prepregroll.model_id.iscutting==0" >否</t>
+                                <t t-if="prepregroll.model_id.iscutting==1" >是</t>
+                            </div>
+                            <div style="position:absolute; left:220px; top:380px; font-family:Consolas; font-size:21pt">
+                                <span t-field="prepregroll.roll_length"/> * <span t-field="prepregroll.model_id.width"/>
+                            </div>
+                            <div style="position:absolute; left:720px; top:380px; font-family:Consolas; font-weight:bold; font-size:19pt">
+                                <span t-field="prepregroll.id"/>
+                            </div>
+                            <div style="position:absolute; left:1010px; top:380px; font-family:Consolas; font-size:29.5pt">
+                                <span t-field="prepregroll.area"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:480px; font-family:Consolas; font-size:31pt">
+                                <span t-field="prepregroll.lot_no"/>
+                            </div>
+                            <div style="position:absolute; left:720px; top:480px; font-family:宋体; font-size:22.5pt">
+                                <span t-field="prepregroll.gross_weight"/>
+                            </div>
+                            <div style="position:absolute; left:890px; top:500px; font-family:Consolas; font-size:12pt; text-align:center; ">
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', prepregroll.barcode_no, 300, 250)" style="width:300px;height:250px"/>
+                                <p t-field="prepregroll.barcode_no"></p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <template id="fabriclabel">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="fabricroll">
+                    <div class="page">
+                        <div class="row" >
+                            <t t-if="fabricroll.model_id.packing=='standard'">
+                                <img src="/hs_pts_cmsp/static/description/fabric_stand.png"
+                                 border="0"/>
+                            </t>
+                            <t t-if="fabricroll.model_id.packing=='neutral'">
+                                <img src="/hs_pts_cmsp/static/description/fabric_neu.png"
+                                 border="0"/>
+                            </t>
+                            <t t-if="fabricroll.model_id.packing=='simpleness'">
+                                <img src="/hs_pts_cmsp/static/description/fabric_neu.png"
+                                 border="0"/>
+                            </t>
+                            <div style="position:absolute; left:220px; top:160px; font-family:Consolas; font-size:22.5pt">
+                                <span t-field="fabricroll.model_id.name"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:260px; font-family:Consolas; font-size:23pt">
+                                <span t-field="fabricroll.model_id.product_no"/>
+                            </div>
+                            <div style="position:absolute; left:1000px; top:260px; font-family:Consolas; font-size:24.5pt">
+                                <span t-field="fabricroll.area"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:340px; font-family:Consolas; font-size:19pt">
+                                <span t-field="fabricroll.roll_length"/> * <span t-field="fabricroll.model_id.width"/>
+                            </div>
+                            <div style="position:absolute; left:1030px; top:340px; font-family:Consolas; font-size:19pt">
+                                <span t-field="fabricroll.id"/>
+                            </div>
+
+                            <t t-if="fabricroll.model_id.packing=='neutral' or fabricroll.model_id.packing=='simpleness'">
+                                <div style="position:absolute; left:220px; top:450px; font-family:Consolas; font-size:19pt">
+                                    <span t-field="fabricroll.net_weight"/>
+                                </div>
+                                <div style="position:absolute; left:1000px; top:450px; font-family:Consolas; font-size:19pt">
+                                    <span t-field="fabricroll.gross_weight"/>
+                                </div>
+
+                                <div style="position:absolute; left:220px; top:550px; font-family:宋体; font-size:30.5pt">
+                                    <span t-field="fabricroll.lot_no"/>
+                                </div>
+
+                                <div style="position:absolute; left:920px; top:580px; font-family:Consolas; font-size:14pt; text-align:center; ">
+                                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', fabricroll.barcode_no, 280, 200)" style="width:280px;height:200px"/>
+                                    <p t-field="fabricroll.barcode_no"></p>
+                                </div>
+                            </t>
+                            <t t-if="fabricroll.model_id.packing=='standard'">
+                                <div style="position:absolute; left:220px; top:420px; font-family:Consolas; font-size:19pt">
+                                    <span t-field="fabricroll.net_weight"/>
+                                </div>
+                                <div style="position:absolute; left:680px; top:420px; font-family:Consolas; font-size:19pt">
+                                    <span t-field="fabricroll.gross_weight"/>
+                                </div>
+
+                                <div style="position:absolute; left:220px; top:500px; font-family:宋体; font-size:30.5pt">
+                                    <span t-field="fabricroll.lot_no"/>
+                                </div>
+
+                                <div style="position:absolute; left:920px; top:440px; font-family:Consolas; font-size:14pt; text-align:center; ">
+                                    <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', fabricroll.barcode_no, 280, 200)" style="width:280px;height:200px"/>
+                                    <p t-field="fabricroll.barcode_no"></p>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <template id="resinlabel">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="resinroll">
+                    <div class="page">
+                        <div class="row" >
+                            <img src="/hs_pts_cmsp/static/description/resin-(w98 X h100 mm).png"
+                                 border="0"/>
+                            <div style="position:absolute; left:220px; top:60px; font-family:Consolas; font-size:16.5pt">
+                                <span t-field="resinroll.model_id.product_no"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:230px; font-family:Consolas; font-size:16.5pt">
+                                <span t-field="resinroll.model_id.name"/>
+                            </div>
+                            <div style="position:absolute; left:590px; top:230px; font-family:Consolas; font-size:16.5pt">
+                                <t t-set="computedays" t-value="resinroll.shelflife * 365"/>
+                                <t t-esc="computedays"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:310px; font-family:Consolas; font-size:14pt">
+                                <span t-field="resinroll.lot_no"/>
+                            </div>
+                            <div style="position:absolute; left:590px; top:310px; font-family:Consolas; font-size:14pt">
+                                <span t-field="resinroll.net_weight"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:370px; font-family:Consolas; font-size:14pt">
+                                <span t-field="resinroll.product_date" t-field-options='{"format": "dd.MM.YYYY"}'/>
+                            </div>
+                            <div style="position:absolute; left:590px; top:370px; font-family:Consolas; font-size:14pt">
+                                <span t-field="resinroll.id"/>
+                            </div>
+                            <div style="position:absolute; left:570px; top:540px; font-family:Consolas; font-size:14pt; text-align:center; ">
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', resinroll.barcode_no, 200, 200)" style="width:200px;height:200px"/>
+                                <p t-field="resinroll.barcode_no"></p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+
+        <template id="sizinglabel">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="sizingroll">
+                    <div class="page">
+                        <div class="row" >
+                            <img src="/hs_pts_cmsp/static/description/sizing-(w98 X h100 mm).png"
+                                 border="0"/>
+                            <div style="position:absolute; left:220px; top:60px; font-family:Consolas; font-size:16.5pt">
+                                <span t-field="sizingroll.model_id.product_no"/>
+                            </div>
+                            <div style="position:absolute; left:590px; top:160px; font-family:Consolas; font-size:16.5pt">
+                                <span t-field="sizingroll.content"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:230px; font-family:Consolas; font-size:16.5pt">
+                                <span t-field="sizingroll.model_id.name"/>
+                            </div>
+                            <div style="position:absolute; left:590px; top:230px; font-family:Consolas; font-size:16.5pt">
+                                <t t-set="computedays" t-value="sizingroll.shelflife * 365"/>
+                                <t t-esc="computedays"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:310px; font-family:Consolas; font-size:14pt">
+                                <span t-field="sizingroll.lot_no"/>
+                            </div>
+                            <div style="position:absolute; left:590px; top:310px; font-family:Consolas; font-size:14pt">
+                                <span t-field="sizingroll.net_weight"/>
+                            </div>
+                            <div style="position:absolute; left:220px; top:370px; font-family:Consolas; font-size:14pt">
+                                <span t-field="sizingroll.product_date" t-field-options='{"format": "dd.MM.YYYY"}'/>
+                            </div>
+                            <div style="position:absolute; left:590px; top:370px; font-family:Consolas; font-size:14pt">
+                                <span t-field="sizingroll.id"/>
+                            </div>
+                            <div style="position:absolute; left:570px; top:540px; font-family:Consolas; font-size:14pt; text-align:center; ">
+                                <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s' % ('Code128', sizingroll.barcode_no, 200, 200)" style="width:200px;height:200px"/>
+                                <p t-field="sizingroll.barcode_no"></p>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>

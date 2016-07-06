@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="material_backend_theme_v9" name="material backend theme assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+                <link rel="stylesheet" type="text/less" href='/material_backend_theme_v9/static/src/less/variables.less' t-ignore="true"/>
+                <link rel="stylesheet" type="text/less" href='/material_backend_theme_v9/static/src/less/bootswatch.less' t-ignore="true"/>
+                <link rel="stylesheet" type="text/less" href="/material_backend_theme_v9/static/src/less/style.less" t-ignore="true"/>
+		        <script type="text/javascript" src="/material_backend_theme_v9/static/src/js/main.js"/>
+                <!--<script type="text/javascript" src="/material_backend_theme_v9/static/src/js/jquery.smartmenus.js"/>
+                <script type="text/javascript" src="/material_backend_theme_v9/static/src/js/jquery.smartmenus.bootstrap.js"/>-->
+            </xpath>
+        </template>
+
+        <template id="material_backend_theme_v9.webclient_bootstrap" inherit_id="web.webclient_bootstrap" name="Webclient Bootstrap">
+            <xpath expr="//div[@id='oe_main_menu_placeholder']" position="replace">
+                   <button id="appsbar_toggle" title="Hide/Show Apps" class="fa fa-th"></button>
+                   <div class="app-title"></div>
+                   <div class="navbar-collapse collapse" id="oe_main_menu_placeholder">
+                       <t t-call="web.menu"/>
+                   </div>
+             </xpath>
+
+             <xpath expr="//div[@class='openerp openerp_webclient_container oe_webclient']" position="replace">
+                <div class="openerp openerp_webclient_container oe_webclient">
+                    <div class="oe_appsbar hide" id="right_menu_bar" groups="base.group_user,base.group_portal">
+
+                        <div class="oe_apps oe_secondary_menus_container">
+                            <div t-foreach="menu_data['children']" t-as="menu" class="oe_app">
+                                <t t-set="debug_param" t-value="'?&amp;debug=' if debug else ''"/>
+                                <a t-att-href="'/web%s#menu_id=%s&amp;action=%s' % (debug_param, (menu.get('children')[0]['id'] if menu.get('children')[0]['action'] else menu.get('children')[0].get('children')[0]['id']) if menu.get('children') else menu['id'], ((menu.get('children')[0]['action'] and menu.get('children')[0]['action'].split(',')[1] or '') if menu.get('children')[0]['action'] else (menu.get('children')[0].get('children')[0]['action'] and menu.get('children')[0].get('children')[0]['action'].split(',')[1] or '')) if menu.get('children') else (menu['action'] and menu['action'].split(',')[1] or '') )"
+                                    t-att-class="'oe_menu_toggler' if menu.get('children') else 'oe_menu_leaf'"
+                                    t-att-data-menu="(menu.get('children')[0]['id'] if menu.get('children')[0]['action'] else menu.get('children')[0].get('children')[0]['id']) if menu.get('children') else menu['id']"
+                                    t-att-data-action-model="((menu.get('children')[0]['action'] and menu.get('children')[0]['action'].split(',')[0] or '') if menu.get('children')[0]['action'] else (menu.get('children')[0].get('children')[0]['action'] and menu.get('children')[0].get('children')[0]['action'].split(',')[0] or '')) if menu.get('children') else (menu['action'] and menu['action'].split(',')[0] or '')"
+                                    t-att-data-action-id="((menu.get('children')[0]['action'] and menu.get('children')[0]['action'].split(',')[1] or '') if menu.get('children')[0]['action'] else (menu.get('children')[0].get('children')[0]['action'] and menu.get('children')[0].get('children')[0]['action'].split(',')[1] or '')) if menu.get('children') else (menu['action'] and menu['action'].split(',')[1] or '')">
+                                    <img t-att-src="'data:image/png;base64,' + menu['web_icon_data'] if menu['web_icon_data'] else 'data:image/png;base64,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'" />
+                                    <div class="oe_app_caption">
+                                        <t t-esc="menu['name']"/>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div><div class="oe_application"/>
+                </div>
+             </xpath>
+        </template>
+
+        <template id="material_backend_theme_v9.menu" inherit_id="web.menu">
+             <xpath expr="//ul[@class='nav navbar-nav navbar-left oe_application_menu_placeholder']" position="replace">               
+                <div class="oe_application_menu_placeholder">
+                    <t t-foreach="menu_data['children']" t-as="menu">
+                        <ul id="main-menu" class="nav navbar-nav navbar-left tnav hide" t-att-data-menu-parent="menu['id']">
+                            <li class="app-name">
+                                <span class="oe_menu_text">
+                                    <t t-esc="menu['name']"/>
+                                </span>
+                            </li>
+                            <li><t t-call="material_backend_theme_v9.menu_secondary_submenu"/></li>
+                        </ul>
+                    </t>
+
+                </div>
+            </xpath>
+        </template>
+
+        <template id="material_backend_theme_v9.menu_secondary_submenu">
+            <ul t-if="menu['children']" class="nav navbar-nav">
+                <t t-foreach="menu['children']" t-as="menu">
+                <li t-att-class="'dropdown' if menu.get('children') else ''">
+                    <t t-set="debug_param" t-value="'?&amp;debug=' if debug else ''"/>
+                    <a t-att-href="'#' if menu.get('children') else '/web%s#menu_id=%s&amp;action=%s' % (debug_param, menu['id'], menu['action'] and menu['action'].split(',')[1] or '')"
+                       t-att-id="'dropdownMenu-%s' % (menu['id'])"
+                       t-att-class="'dropdown-toggle' if menu.get('children') else 'oe_menu_leaf'"
+                       t-att-data-menu="menu['id']"
+                       t-att-data-action-model="menu['action'] and menu['action'].split(',')[0] or ''"
+                       t-att-data-action-id="menu['action'] and menu['action'].split(',')[1] or ''"
+                       t-att-data-toggle="'dropdown' if menu.get('children') else ''"
+                       >
+                       <span class="oe_menu_text">
+                           <t t-esc="menu['name']"/>
+                       </span>
+                       <t t-if="menu['children']"><b class="caret"></b></t>
+                    </a>
+                                
+                    <t t-call="material_backend_theme_v9.menu_secondary_submenu_dropdown"/>
+                </li>
+                </t>
+            </ul>
+        </template>
+
+        <template id="material_backend_theme_v9.menu_secondary_submenu_dropdown">
+            <ul t-if="menu['children']" class="dropdown-menu multi-level" role="menu"
+                t-att-aria-labelledby="'dropdownMenu-%s' % (menu['id'])"
+                >
+                <t t-foreach="menu['children']" t-as="menu">
+                <li t-att-class="'dropdown-submenu' if menu.get('children') else ''"
+                    >
+                    <t t-set="debug_param" t-value="'?&amp;debug=' if debug else ''"/>
+                    <a t-att-href="'#' if menu.get('children') else '/web%s#menu_id=%s&amp;action=%s' % (debug_param, menu['id'], menu['action'] and menu['action'].split(',')[1] or '')"
+                       t-att-id="'dropdownMenu-%s' % (menu['id'])"
+                       t-att-data-menu="menu['id']"
+                       t-att-data-action-model="menu['action'] and menu['action'].split(',')[0] or ''"
+                       t-att-data-action-id="menu['action'] and menu['action'].split(',')[1] or ''"
+                       >
+                       <span class="oe_menu_text">
+                           <t t-esc="menu['name']"/>
+                       </span>
+                    </a>
+                                
+                    <t t-call="material_backend_theme_v9.menu_secondary_submenu_dropdown"/>
+                </li>
+                </t>
+            </ul>
+        </template>
+        
+    </data>
+</openerp>

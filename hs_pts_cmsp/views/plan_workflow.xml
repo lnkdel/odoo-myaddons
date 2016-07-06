@@ -1,0 +1,151 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+
+        <!-- Workflow definition
+        -->
+        <record model="workflow" id="hs_pts_cmsp_wkf_plan">
+            <field name="name">hs_pts.cmsp.wkf.plan</field>
+            <field name="osv">hs_pts.cmsp.plan</field>
+            <field name="on_create">True</field>
+        </record>
+
+
+        <record model="workflow.activity" id="act_draft"> <!-- draft -->
+            <field name="wkf_id" ref="hs_pts_cmsp_wkf_plan"/>
+            <field name="name">draft</field>
+            <field name="kind">function</field>
+            <field name="action">plan_reset()</field>
+            <field name="flow_start" eval="True"/>
+            <field name="split_mode">XOR</field>
+        </record>
+
+        <record model="workflow.activity" id="act_process_selection"> <!-- ps -->
+            <field name="wkf_id" ref="hs_pts_cmsp_wkf_plan"/>
+            <field name="name">process_selection</field>
+            <field name="kind">function</field>
+            <field name="action">plan_process_selection()</field>
+            <field name="flow_start" eval="False" />
+            <field name="split_mode">OR</field>
+        </record>
+
+        <record model="workflow.activity" id="act_doc_prepare"> <!-- dc -->
+            <field name="wkf_id" ref="hs_pts_cmsp_wkf_plan"/>
+            <field name="name">doc_prepare</field>
+            <field name="kind">function</field>
+            <field name="action">plan_doc_prepare()</field>
+            <field name="split_mode">OR</field>
+        </record>
+
+        <record model="workflow.activity" id="act_task_confirm"> <!-- tc -->
+            <field name="wkf_id" ref="hs_pts_cmsp_wkf_plan"/>
+            <field name="name">task_confirm</field>
+            <field name="kind">function</field>
+            <field name="action">plan_task_confirm()</field>
+            <field name="split_mode">OR</field>
+        </record>
+
+        <record model="workflow.activity" id="act_task_inprogressing"> <!-- tip -->
+            <field name="wkf_id" ref="hs_pts_cmsp_wkf_plan"/>
+            <field name="name">task_in_progressing</field>
+            <field name="kind">function</field>
+            <field name="action">task_in_progressing()</field>
+            <field name="split_mode">OR</field>
+        </record>
+
+        <record model="workflow.activity" id="act_task_finished"> <!-- tf -->
+            <field name="wkf_id" ref="hs_pts_cmsp_wkf_plan"/>
+            <field name="name">task_finished</field>
+            <field name="kind">function</field>
+            <field name="action">task_finished()</field>
+        </record>
+
+        <record model="workflow.activity" id="act_cancel"> <!-- cancel -->
+            <field name="wkf_id" ref="hs_pts_cmsp_wkf_plan"/>
+            <field name="name">task_cancel</field>
+            <field name="flow_stop" eval="False"/>
+            <field name="kind">function</field>
+            <field name="action">cancel()</field>
+        </record>
+        <!--
+            workflow transition
+        -->
+
+        <record model="workflow.transition" id="plan_draft2processselection"> <!-- 1. draft->process selection -->
+            <field name="act_from" ref="act_draft"/>
+            <field name="act_to" ref="act_process_selection"/>
+            <field name="signal">plan_confirm</field>
+            <!--<field name="group_id" ref="hs_pts_cmsp.group_pts_cmsp_planner"/>-->
+        </record>
+
+        <record model="workflow.transition"
+                id="plan_processselection2draft"> <!-- 2. process selection->draft (reset signal) -->
+            <field name="act_from" ref="act_process_selection"/>
+            <field name="act_to" ref="act_draft"/>
+            <field name="signal">plan_reset</field>
+            <!--<field name="group_id" ref="hs_pts_cmsp.group_pts_cmsp_processconfirm"/>-->
+        </record>
+
+        <record model="workflow.transition"
+                id="plan_processselection2docprepare"> <!-- 2. process selection->doc prepare-->
+            <field name="act_from" ref="act_process_selection"/>
+            <field name="act_to" ref="act_doc_prepare"/>
+            <field name="signal">plan_confirm2</field>
+            <!--<field name="group_id" ref="hs_pts_cmsp.group_pts_cmsp_processconfirm"/>-->
+        </record>
+
+        <record model="workflow.transition"
+                id="plan_docprepare2processselection"> <!-- 3. doc prepare -> process selection-->
+            <field name="act_from" ref="act_doc_prepare"/>
+            <field name="act_to" ref="act_process_selection"/>
+            <field name="signal">plan_reset2</field>
+            <!--<field name="group_id" ref="hs_pts_cmsp.group_pts_cmsp_docprepare"/>-->
+        </record>
+
+        <record model="workflow.transition" id="plan_docprepare2taskconfirm"> <!-- 3. doc prepare->task confirm -->
+            <field name="act_from" ref="act_doc_prepare"/>
+            <field name="act_to" ref="act_task_confirm"/>
+            <field name="signal">plan_confirm3</field>
+            <!--<field name="group_id" ref="hs_pts_cmsp.group_pts_cmsp_docprepare"/>-->
+        </record>
+
+        <record model="workflow.transition" id="plan_taskconfirm2docprepare"> <!-- 4. task confirm->doc prepare -->
+            <field name="act_from" ref="act_task_confirm"/>
+            <field name="act_to" ref="act_doc_prepare"/>
+            <field name="signal">plan_reset3</field>
+            <!--<field name="group_id" ref="base.group_hr_user"/>-->
+        </record>
+
+        <record model="workflow.transition" id="plan_taskconfirm2draft"> <!-- 4. task confirm->draft -->
+            <field name="act_from" ref="act_task_confirm"/>
+            <field name="act_to" ref="act_draft"/>
+            <field name="signal">plan_reset</field>
+            <!--<field name="group_id" ref="base.group_hr_user"/>-->
+        </record>
+
+        <record model="workflow.transition"
+                id="plan_taskconfirm2taskinprogressing"> <!-- 4. task confirm->task in progressing -->
+            <field name="act_from" ref="act_task_confirm"/>
+            <field name="act_to" ref="act_task_inprogressing"/>
+            <field name="signal">plan_confirm4</field>
+            <!--<field name="group_id" ref="base.group_hr_user"/>-->
+        </record>
+
+        <record model="workflow.transition"
+                id="plan_taskinprogress2taskfinished"> <!-- 5. task in progressing->task finished -->
+            <field name="act_from" ref="act_task_inprogressing"/>
+            <field name="act_to" ref="act_task_finished"/>
+            <field name="signal">plan_confirm5</field>
+            <!--<field name="group_id" ref="base.group_hr_user"/>-->
+        </record>
+
+        <record model="workflow.transition"
+                id="plan_taskinprogress2draft"> <!-- 5. task in progressing->draft (reset signal) -->
+            <field name="act_from" ref="act_task_inprogressing"/>
+            <field name="act_to" ref="act_cancel"/>
+            <field name="signal">plan_cancel</field>
+            <!--<field name="group_id" ref="base.group_hr_manager"/>-->
+        </record>
+
+    </data>
+</openerp>

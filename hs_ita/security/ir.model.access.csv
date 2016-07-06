@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+asset_base_group_user,asset base.group_user,model_hs_ita_asset,base.group_user,1,0,0,0
+category_base_group_user,category base.group_user,model_hs_ita_category,base.group_user,1,0,0,0
+brand_base_group_user,brand base.group_user,model_hs_ita_brand,base.group_user,1,0,0,0
+attribute_base_group_user,attribute base.group_user,model_hs_ita_attribute,base.group_user,1,0,0,0
+location_base_group_user,location base.group_user,model_hs_ita_location,base.group_user,1,0,0,0
+count_base_group_user,count base.group_user,model_hs_ita_count,base.group_user,1,0,0,0
+count_item_base_group_user,count_item base.group_user,model_hs_ita_count_item,base.group_user,1,0,0,0
+asset_group_ita_manager,asset group_ita_manager,model_hs_ita_asset,hs_ita.group_ita_manager,1,1,1,1
+category_group_ita_manager,category group_ita_manager,model_hs_ita_category,hs_ita.group_ita_manager,1,1,1,1
+brand_group_ita_manager,brand group_ita_manager,model_hs_ita_brand,hs_ita.group_ita_manager,1,1,1,1
+attribute_group_ita_manager,attribute group_ita_manager,model_hs_ita_attribute,hs_ita.group_ita_manager,1,1,1,1
+location_group_ita_manager,location group_ita_manager,model_hs_ita_location,hs_ita.group_ita_manager,1,1,1,1
+count_group_ita_manager,count group_ita_manager,model_hs_ita_count,hs_ita.group_ita_manager,1,1,1,1
+count_item_group_ita_manager,count_item group_ita_manager,model_hs_ita_count_item,hs_ita.group_ita_manager,1,1,1,1

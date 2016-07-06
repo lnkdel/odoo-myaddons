@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_pts_user" model="res.groups">
+            <field name="name">PTS User</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="comment">The user will be able to access Production Traceability System (PTS) menu items.</field>
+        </record>
+
+        <menuitem name="CMSP" id="hs_pts_menu" groups="group_pts_user"/>
+
+    </data>
+</odoo>

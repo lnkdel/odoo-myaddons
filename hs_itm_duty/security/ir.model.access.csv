@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+duty_group_itm_duty_user,hs_itm.duty.record hs_itm_duty.group_itm_duty_user,model_hs_itm_duty_record,hs_itm_duty.group_itm_duty_user,1,1,1,1
+duty_group_itm_duty_manager,hs_itm.duty.record hs_itm_duty.group_itm_duty_manager,model_hs_itm_duty_record,hs_itm_duty.group_itm_duty_manager,1,1,1,1

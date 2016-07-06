@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_itm_user" model="res.groups">
+            <field name="name">ITM User</field>
+            <field name="category_id" ref="hs_base.module_category_hengshen"/>
+            <field name="comment">The user will be able to access IT Management (ITM) menu items.</field>
+        </record>
+
+        <menuitem name="ITM" id="hs_itm_menu" groups="group_itm_user"/>
+        <menuitem id="setting_menu" name="Settings" parent="hs_itm_menu" sequence="99999"/>
+    </data>
+</odoo>
+

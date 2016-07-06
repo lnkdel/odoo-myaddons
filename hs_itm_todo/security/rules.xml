@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="todo_task_private_rule" model="ir.rule">
+            <field name="name">Private ToDo Tasks is visible only to its PIC.</field>
+            <field name="model_id" ref="model_hs_itm_todo_task"/>
+            <field name="groups" eval="[(4, ref('hs_itm_todo.group_itm_todo_user'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">
+                ['|', ('user_id','=',user.id), ('private','=',False)]
+            </field>
+        </record>
+        <record id="todo_note_private_rule" model="ir.rule">
+            <field name="name">Private ToDo Notes is visible only to its creator or the Task's PIC.</field>
+            <field name="model_id" ref="model_hs_itm_todo_note"/>
+            <field name="groups" eval="[(4, ref('hs_itm_todo.group_itm_todo_user'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">
+                ['|', ('create_uid','=',user.id), '|', ('task_id.user_id', '=', user.id), ('private','=',False)]
+            </field>
+        </record>
+        <record id="todo_task_pic_rule" model="ir.rule">
+            <field name="name">ToDo Tasks can be created/updated/deleted by its PIC.</field>
+            <field name="model_id" ref="model_hs_itm_todo_task"/>
+            <field name="groups" eval="[(4, ref('hs_itm_todo.group_itm_todo_user'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+        </record>
+        <record id="todo_task_manager_rule" model="ir.rule">
+            <field name="name">ToDo Tasks can be created/updated/deleted by the ones in group: 'ITM ToDo Manager'.</field>
+            <field name="model_id" ref="model_hs_itm_todo_task"/>
+            <field name="groups" eval="[(4, ref('hs_itm_todo.group_itm_todo_manager'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+        <record id="todo_note_create_rule" model="ir.rule">
+            <field name="name">ToDo Notes can be created/updated/deleted by its creator.</field>
+            <field name="model_id" ref="model_hs_itm_todo_note"/>
+            <field name="groups" eval="[(4, ref('hs_itm_todo.group_itm_todo_user'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('create_uid', '=', user.id)]</field>
+        </record>
+        <record id="todo_note_manager_rule" model="ir.rule">
+            <field name="name">ToDo Notes can be created/updated/deleted by the ones in group: 'ITM ToDo Manager'.</field>
+            <field name="model_id" ref="model_hs_itm_todo_note"/>
+            <field name="groups" eval="[(4, ref('hs_itm_todo.group_itm_todo_manager'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+        <record id="todo_hour_pic_rule" model="ir.rule">
+            <field name="name">ToDo Hours can be created/updated/deleted by its PIC.</field>
+            <field name="model_id" ref="model_hs_itm_todo_hour"/>
+            <field name="groups" eval="[(4, ref('hs_itm_todo.group_itm_todo_user'))]"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+        </record>
+        <record id="todo_hour_manager_rule" model="ir.rule">
+            <field name="name">ToDo Hours can be created/updated/deleted by the ones in group: 'ITM ToDo Manager'.</field>
+            <field name="model_id" ref="model_hs_itm_todo_hour"/>
+            <field name="groups" eval="[(4, ref('hs_itm_todo.group_itm_todo_manager'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_create" eval="1"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+    </data>
+</openerp>

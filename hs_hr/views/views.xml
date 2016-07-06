@@ -1,0 +1,68 @@
+<openerp>
+    <data>
+        <record id="hr_employee_form" model="ir.ui.view">
+            <field name="name">HS Employee Form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <label for="name" position="before">
+                    <label for="badge_no" class="oe_edit_only"/>
+                    <h1>
+                        <field name="badge_no"/>
+                    </h1>
+                </label>
+                <field name="work_phone" position="after">
+                    <field name="wechat_account"/>
+                </field>
+                <field name="job_id" position="before">
+                    <field name="other_department_ids" widget="many2many_tags"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="hr_employee_tree" model="ir.ui.view">
+            <field name="name">HS Employee Tree</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="badge_no"/>
+                </field>
+                <field name="work_phone" position="after">
+                    <field name="wechat_account"/>
+                </field>
+                <field name="department_id" position="after">
+                    <field name="other_department_ids"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="hr_employee_kanban" model="ir.ui.view">
+            <field name="name">HS Employee Kanban</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="badge_no"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="hr_employee_filter" model="ir.ui.view">
+            <field name="name">HS Employee Filter</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="attributes">
+                    <attribute name="filter_domain">
+                        ['|', ('badge_no','ilike',self), '|', ('work_email','ilike',self), ('name','ilike',self)]
+                    </attribute>
+                </field>
+            </field>
+        </record>
+
+        <record id="hr.open_module_tree_department" model="ir.actions.act_window">
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,47 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hs_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-06-29 04:56+0000\n"
+"PO-Revision-Date: 2016-06-29 04:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hs_hr
+#: model:ir.model.fields,field_description:hs_hr.field_hr_employee_badge_no
+msgid "Badge No."
+msgstr "工号"
+
+#. module: hs_hr
+#: sql_constraint:hr.employee:0
+msgid "Duplicated \"Badge No\""
+msgstr "重复的 \"工号\""
+
+#. module: hs_hr
+#: sql_constraint:hr.employee:0
+msgid "Duplicated \"WeChat Account\""
+msgstr "重复的 \"微信帐号\""
+
+#. module: hs_hr
+#: model:ir.model,name:hs_hr.model_hr_employee
+msgid "Employee"
+msgstr "员工"
+
+#. module: hs_hr
+#: model:ir.model.fields,field_description:hs_hr.field_hr_employee_other_department_ids
+msgid "Other Departments"
+msgstr "其它部门"
+
+#. module: hs_hr
+#: model:ir.model.fields,field_description:hs_hr.field_hr_employee_wechat_account
+msgid "WeChat Account"
+msgstr "微信帐号"
+

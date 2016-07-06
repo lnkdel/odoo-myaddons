@@ -1,0 +1,543 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hs_itm_todo
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 9.0c\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-23 03:30+0000\n"
+"PO-Revision-Date: 2016-04-23 03:30+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hs_itm_todo
+#: sql_constraint:hs_itm.todo.hour:0
+msgid "A quantity must be positive and cannot be great than 24!"
+msgstr "数量必须大于0，且不大于24。"
+
+#. module: hs_itm_todo
+#: sql_constraint:hs_itm.todo.hour:0
+msgid "A user can only have one hour record for a task at the same workday."
+msgstr "同一工作日，用户只能对一项任务录入一条工时记录。"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_message_needaction
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_message_needaction
+msgid "Action Needed"
+msgstr "所需行动"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_category_active
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_active
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_active
+msgid "Active?"
+msgstr "有效？"
+
+#. module: hs_itm_todo
+#: sql_constraint:hs_itm.todo.category:0
+msgid "Another category already exists with this name!"
+msgstr "重复的类别名称！"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_category_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_hour_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_filter
+msgid "Archived"
+msgstr "归档"
+
+#. module: hs_itm_todo
+#: selection:hs_itm.todo.task,state:0
+msgid "Cancelled"
+msgstr "已取消"
+
+#. module: hs_itm_todo
+#: model:ir.model,name:hs_itm_todo.model_hs_itm_todo_category
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_category_id
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_filter
+msgid "Category"
+msgstr "类别"
+
+#. module: hs_itm_todo
+#: selection:hs_itm.todo.note,type:0
+msgid "Comment"
+msgstr "评论"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_category_create_uid
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_hour_create_uid
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_create_uid
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_create_uid
+msgid "Created by"
+msgstr "创建者"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_category_create_date
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_hour_create_date
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_create_date
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_create_date
+msgid "Created on"
+msgstr "创建于"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_filter
+msgid "Creator"
+msgstr "Creator"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,help:hs_itm_todo.field_hs_itm_todo_note_message_last_post
+#: model:ir.model.fields,help:hs_itm_todo.field_hs_itm_todo_task_message_last_post
+msgid "Date of the last message posted on the record."
+msgstr "发布到记录上的最后消息的日期"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_hour_description
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_description
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_description
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_form
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_form
+msgid "Description"
+msgstr "说明"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_category_display_name
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_hour_display_name
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_display_name
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_display_name
+msgid "Display Name"
+msgstr "显示名称"
+
+#. module: hs_itm_todo
+#: selection:hs_itm.todo.task,state:0
+msgid "Draft"
+msgstr "草稿"
+
+#. module: hs_itm_todo
+#: sql_constraint:hs_itm.todo.task:0
+msgid "Error ! Plan Finish Date cannot be set before Plan Start Date."
+msgstr "错误！ 计划完成日期不得早于计划开始日期。"
+
+#. module: hs_itm_todo
+#: selection:hs_itm.todo.task,state:0
+msgid "Finished"
+msgstr "已完成"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_message_follower_ids
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_message_follower_ids
+msgid "Followers"
+msgstr "关注者"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_message_channel_ids
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_message_channel_ids
+msgid "Followers (Channels)"
+msgstr "关注者(频道)"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_message_partner_ids
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_message_partner_ids
+msgid "Followers (Partners)"
+msgstr "关注者（合作伙伴）"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_hour_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_filter
+msgid "Group By"
+msgstr "分组"
+
+#. module: hs_itm_todo
+#: model:ir.model,name:hs_itm_todo.model_hs_itm_todo_hour
+msgid "Hour"
+msgstr "工时"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_hour_ids
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_form
+msgid "Hours"
+msgstr "工时"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_category_id
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_hour_id
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_id
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_id
+msgid "ID"
+msgstr "ID"
+
+#. module: hs_itm_todo
+#: model:res.groups,name:hs_itm_todo.group_itm_todo_manager
+msgid "ITM ToDo Manager"
+msgstr "ITM ToDo 管理员"
+
+#. module: hs_itm_todo
+#: model:res.groups,name:hs_itm_todo.group_itm_todo_user
+msgid "ITM ToDo User"
+msgstr "ITM ToDo 用户"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,help:hs_itm_todo.field_hs_itm_todo_note_message_unread
+#: model:ir.model.fields,help:hs_itm_todo.field_hs_itm_todo_task_message_unread
+msgid "If checked new messages require your attention."
+msgstr "查看是否有需要留意的新信息。"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,help:hs_itm_todo.field_hs_itm_todo_note_message_needaction
+#: model:ir.model.fields,help:hs_itm_todo.field_hs_itm_todo_task_message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "确认后, 会出现新消息."
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_message_is_follower
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_message_is_follower
+msgid "Is Follower"
+msgstr "是否关注者"
+
+#. module: hs_itm_todo
+#: selection:hs_itm.todo.note,type:0
+msgid "Issue"
+msgstr "问题"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_message_last_post
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_message_last_post
+msgid "Last Message Date"
+msgstr "最后消息日期"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_category___last_update
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_hour___last_update
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note___last_update
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task___last_update
+msgid "Last Modified on"
+msgstr "最后修改日"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_category_write_uid
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_hour_write_uid
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_write_uid
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_write_uid
+msgid "Last Updated by"
+msgstr "最后更新"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_category_write_date
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_hour_write_date
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_write_date
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_write_date
+msgid "Last Updated on"
+msgstr "最后更新"
+
+#. module: hs_itm_todo
+#: selection:hs_itm.todo.note,type:0
+msgid "Memo"
+msgstr "备忘"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_message_ids
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_message_ids
+msgid "Messages"
+msgstr "消息"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_hour_view_filter
+msgid "My Hours"
+msgstr "我的工时"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_filter
+msgid "My Notes"
+msgstr "我的日志"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_hour_view_filter
+msgid "My Task's Hours"
+msgstr "我的任务的工时"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_filter
+msgid "My Task's Notes"
+msgstr "我的任务的日志"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_filter
+msgid "My Tasks"
+msgstr "我的任务"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_category_name
+msgid "Name"
+msgstr "名称"
+
+#. module: hs_itm_todo
+#: model:ir.model,name:hs_itm_todo.model_hs_itm_todo_note
+msgid "Note"
+msgstr "日志"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_note_qty
+msgid "Note Qty"
+msgstr "日志数量"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_note_ids
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_form
+msgid "Notes"
+msgstr "日志"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_message_needaction_counter
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_message_needaction_counter
+msgid "Number of Actions"
+msgstr "动作的序列号"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,help:hs_itm_todo.field_hs_itm_todo_note_message_needaction_counter
+#: model:ir.model.fields,help:hs_itm_todo.field_hs_itm_todo_task_message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "需要动作的消息编号"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,help:hs_itm_todo.field_hs_itm_todo_note_message_unread_counter
+#: model:ir.model.fields,help:hs_itm_todo.field_hs_itm_todo_task_message_unread_counter
+msgid "Number of unread messages"
+msgstr "未读的消息数量"
+
+#. module: hs_itm_todo
+#: selection:hs_itm.todo.task,state:0
+msgid "Ongoing"
+msgstr "进行中"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_hour_user_id
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_user_id
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_hour_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_filter
+msgid "PIC"
+msgstr "负责人"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_parent_left
+msgid "Parent Left"
+msgstr "父级左"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_parent_right
+msgid "Parent Right"
+msgstr "父级右"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_parent_id
+msgid "Parent Task"
+msgstr "父任务"
+
+#. module: hs_itm_todo
+#: selection:hs_itm.todo.task,state:0
+msgid "Pending"
+msgstr "暂停中"
+
+#. module: hs_itm_todo
+#: selection:hs_itm.todo.note,type:0
+msgid "Plan"
+msgstr "计划"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_plan_finish_date
+msgid "Plan Finish Date"
+msgstr "计划完成时间"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_plan_start_date
+msgid "Plan Start Date"
+msgstr "计划启动时间"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_priority
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_filter
+msgid "Priority"
+msgstr "优先级"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_private
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_private
+msgid "Private?"
+msgstr "私有？"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_hour_qty
+msgid "Qty"
+msgstr "数量"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_filter
+msgid "Root Tasks"
+msgstr "根任务"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_category_sequence
+msgid "Sequence"
+msgstr "序列"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_filter
+msgid "State"
+msgstr "状态"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_state
+msgid "Status"
+msgstr "状态"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_child_ids
+msgid "Sub Tasks"
+msgstr "子任务"
+
+#. module: hs_itm_todo
+#: model:ir.model,name:hs_itm_todo.model_hs_itm_todo_task
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_hour_task_id
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_task_id
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_hour_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_filter
+msgid "Task"
+msgstr "任务"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_category_task_ids
+msgid "Tasks"
+msgstr "任务"
+
+#. module: hs_itm_todo
+#: model:res.groups,comment:hs_itm_todo.group_itm_todo_manager
+msgid "The user will be able to manage all todo task records, make notes for all todo task records."
+msgstr "用户可以管理所有的任务数据，为所有的任务撰写日志。"
+
+#. module: hs_itm_todo
+#: model:res.groups,comment:hs_itm_todo.group_itm_todo_user
+msgid "The user will be able to manage self todo task records, view others' todo task records, make notes for all todo task records."
+msgstr "用户可以管理自己负责的任务数据，查看别人负责的任务数据，为所有的任务撰写日志。"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_name
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_name
+msgid "Title"
+msgstr "标题"
+
+#. module: hs_itm_todo
+#: model:ir.actions.act_window,name:hs_itm_todo.todo_category_action
+#: model:ir.ui.menu,name:hs_itm_todo.todo_category_menu
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_category_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_category_view_tree
+msgid "ToDo Categories"
+msgstr "ToDo 类别"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_category_view_form
+msgid "ToDo Category"
+msgstr "ToDo 类别"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_hour_view_form
+msgid "ToDo Hour"
+msgstr "ToDo 工时"
+
+#. module: hs_itm_todo
+#: model:ir.actions.act_window,name:hs_itm_todo.todo_hour_action
+#: model:ir.ui.menu,name:hs_itm_todo.todo_hour_menu
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_hour_view_calendar
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_hour_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_hour_view_tree
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_form
+msgid "ToDo Hours"
+msgstr "ToDo 工时"
+
+#. module: hs_itm_todo
+#: model:ir.ui.menu,name:hs_itm_todo.todo_management_menu
+msgid "ToDo Management"
+msgstr "ToDo 管理"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_form
+msgid "ToDo Note"
+msgstr "ToDo 日志"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_form
+msgid "ToDo Note Title"
+msgstr "ToDo 日志标题"
+
+#. module: hs_itm_todo
+#: model:ir.actions.act_window,name:hs_itm_todo.todo_note_action
+#: model:ir.ui.menu,name:hs_itm_todo.todo_note_menu
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_calendar
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_tree
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_form
+msgid "ToDo Notes"
+msgstr "ToDo 日志"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_form
+msgid "ToDo Task"
+msgstr "ToDo 任务"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_form
+msgid "ToDo Task Title"
+msgstr "ToDo 任务标题"
+
+#. module: hs_itm_todo
+#: model:ir.actions.act_window,name:hs_itm_todo.todo_task_action
+#: model:ir.ui.menu,name:hs_itm_todo.todo_task_menu
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_task_view_tree
+msgid "ToDo Tasks"
+msgstr "ToDo 任务"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_hour_sum
+msgid "Total Hours"
+msgstr "工时合计"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_type
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_filter
+msgid "Type"
+msgstr "类型"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_message_unread
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_message_unread
+msgid "Unread Messages"
+msgstr "未读消息"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_message_unread_counter
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_task_message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "未读消息计数器"
+
+#. module: hs_itm_todo
+#: selection:hs_itm.todo.note,type:0
+msgid "Update"
+msgstr "进展"
+
+#. module: hs_itm_todo
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_hour_workday
+#: model:ir.model.fields,field_description:hs_itm_todo.field_hs_itm_todo_note_workday
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_hour_view_filter
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_filter
+msgid "Workday"
+msgstr "工作日"
+
+#. module: hs_itm_todo
+#: model:ir.ui.view,arch_db:hs_itm_todo.todo_note_view_filter
+msgid "Writer"
+msgstr "作者"
+

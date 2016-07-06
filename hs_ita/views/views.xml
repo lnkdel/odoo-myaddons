@@ -1,0 +1,513 @@
+<openerp>
+    <data>
+        <menuitem name="ITA" id="hs_ita_menu"/>
+
+        <menuitem id="asset_management_menu" name="IT Asset Management" parent="hs_ita_menu" sequence="1"/>
+
+        <record id="asset_view_tree" model="ir.ui.view">
+            <field name="name">asset.tree</field>
+            <field name="model">hs_ita.asset</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="asset_no"/>
+                    <field name="category_id"/>
+                    <field name="brand_id"/>
+                    <field name="model_no"/>
+                    <field name="location_id"/>
+                    <field name="employee_id"/>
+                    <field name="department_id"/>
+                    <field name="use"/>
+                </tree>
+            </field>
+        </record>
+        <record id="asset_view_form" model="ir.ui.view">
+            <field name="name">asset.form</field>
+            <field name="model">hs_ita.asset</field>
+            <field name="arch" type="xml">
+                <form string="Asset">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="asset_no" class="oe_edit_only"/>
+                            <h1>
+                                <field name="asset_no" placeholder="ITA Asset Number"/>
+                            </h1>
+                            <label for="category_id" class="oe_edit_only"/>
+                            <field name="category_id"/>
+                            <label for="location_id" class="oe_edit_only"/>
+                            <field name="location_id"/>
+                        </div>
+                        <group name="group_top">
+                            <group>
+                                <field name="employee_id"/>
+                                <field name="department_id"/>
+                                <field name="assign_date"/>
+                            </group>
+                            <group>
+                                <field name="use"/>
+                                <field name="finance_asset_no"/>
+                                <field name="start_date"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Product Information">
+                                <group>
+                                    <group>
+                                        <field name="image" widget="image"/>
+                                    </group>
+                                    <group>
+                                        <field name="brand_id"/>
+                                        <field name="model_no"/>
+                                        <field name="serial_no"/>
+                                        <field name="attribute_ids" widget="many2many_tags"/>
+                                        <field name="po_no"/>
+                                        <field name="cost"/>
+                                        <field name="warranty"/>
+                                        <field name="note"/>
+                                        <field name="active"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Count Information">
+                                <field name="count_item_ids" readonly="1"/>
+                            </page>
+                            <page string="Cancellation Information">
+                                <group>
+                                    <group>
+                                        <field name="cancel_date"/>
+                                        <field name="cancel_type"/>
+                                    </group>
+                                    <group>
+                                        <field name="cancel_note"/>
+                                    </group>
+                                </group>
+                            </page>
+                        </notebook>
+                        <group name="group_log_access">
+                            <group>
+                                <field name="create_date" readonly="1"/>
+                                <field name="create_uid" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="write_date" readonly="1"/>
+                                <field name="write_uid" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <record id="asset_view_filter" model="ir.ui.view">
+            <field name="name">asset.filter</field>
+            <field name="model">hs_ita.asset</field>
+            <field name="arch" type="xml">
+                <search string="Assets">
+                    <field name="asset_no"/>
+                    <field name="category_id"/>
+                    <field name="attribute_ids"/>
+                    <field name="model_no"/>
+                    <field name="location_id"/>
+                    <field name="employee_id"/>
+                    <field name="department_id"/>
+                    <field name="finance_asset_no"/>
+                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Category" domain="[]" context="{'group_by':'category_id'}"/>
+                        <filter string="Employee" domain="[]" context="{'group_by':'employee_id'}"/>
+                        <filter string="Department" domain="[]" context="{'group_by':'department_id'}"/>
+                        <filter string="Location" domain="[]" context="{'group_by':'location_id'}"/>
+                    </group>
+                </search>
+             </field>
+        </record>
+        <record id="asset_view_graph" model="ir.ui.view">
+            <field name="name">asset.graph</field>
+            <field name="model">hs_ita.asset</field>
+            <field name="arch" type="xml">
+                <graph type="bar">
+                    <field name="asset_no"/>
+                    <field name="employee_id"/>
+                    <field name="department_id"/>
+                    <field name="category_id"/>
+                    <field name="location_id"/>
+                    <field name="finance_asset_no"/>
+                </graph>
+             </field>
+        </record>
+        <record id="asset_action" model="ir.actions.act_window">
+            <field name="name">Assets</field>
+            <field name="res_model">hs_ita.asset</field>
+            <field name="view_mode">tree,form,graph</field>
+        </record>
+        <menuitem id="asset_menu" name="Assets"
+                  parent="asset_management_menu" action="asset_action"
+                  sequence="1"/>
+
+        <menuitem id="setting_menu" name="Settings" parent="hs_ita_menu" sequence="2"/>
+
+        <record id="category_view_tree" model="ir.ui.view">
+            <field name="name">category.tree</field>
+            <field name="model">hs_ita.category</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" delete="false">
+                    <field name="name"/>
+                    <field name="asset_qty"/>
+                    <field name="sequence"/>
+                </tree>
+            </field>
+        </record>
+        <record id="category_view_form" model="ir.ui.view">
+            <field name="name">category.form</field>
+            <field name="model">hs_ita.category</field>
+            <field name="arch" type="xml">
+                <form string="Category">
+                    <group name="group_top">
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group name="group_log_access">
+                        <group>
+                            <field name="create_date" readonly="1"/>
+                            <field name="create_uid" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="write_date" readonly="1"/>
+                            <field name="write_uid" readonly="1"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="category_view_filter" model="ir.ui.view">
+            <field name="name">category.filter</field>
+            <field name="model">hs_ita.category</field>
+            <field name="arch" type="xml">
+                <search string="Categories">
+                    <field name="name"/>
+                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                </search>
+             </field>
+        </record>
+        <record id="category_action" model="ir.actions.act_window">
+            <field name="name">Categories</field>
+            <field name="res_model">hs_ita.category</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="category_menu" name="Categories"
+                  parent="setting_menu" action="category_action"
+                  sequence="1"/>
+
+        <record id="brand_view_tree" model="ir.ui.view">
+            <field name="name">brand.tree</field>
+            <field name="model">hs_ita.brand</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" delete="false">
+                    <field name="name"/>
+                    <field name="sequence"/>
+                </tree>
+            </field>
+        </record>
+        <record id="brand_view_form" model="ir.ui.view">
+            <field name="name">brand.form</field>
+            <field name="model">hs_ita.brand</field>
+            <field name="arch" type="xml">
+                <form string="Brand">
+                    <group name="group_top">
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group name="group_log_access">
+                        <group>
+                            <field name="create_date" readonly="1"/>
+                            <field name="create_uid" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="write_date" readonly="1"/>
+                            <field name="write_uid" readonly="1"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="brand_view_filter" model="ir.ui.view">
+            <field name="name">brand.filter</field>
+            <field name="model">hs_ita.brand</field>
+            <field name="arch" type="xml">
+                <search string="Brands">
+                    <field name="name"/>
+                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                </search>
+             </field>
+        </record>
+        <record id="brand_action" model="ir.actions.act_window">
+            <field name="name">Brands</field>
+            <field name="res_model">hs_ita.brand</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="brand_menu" name="Brands"
+                  parent="setting_menu" action="brand_action"
+                  sequence="2"/>
+
+        <record id="attribute_view_tree" model="ir.ui.view">
+            <field name="name">attribute.tree</field>
+            <field name="model">hs_ita.attribute</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" delete="false">
+                    <field name="name"/>
+                    <field name="value"/>
+                    <field name="category_id"/>
+                    <field name="sequence"/>
+                </tree>
+            </field>
+        </record>
+        <record id="attribute_view_form" model="ir.ui.view">
+            <field name="name">attribute.form</field>
+            <field name="model">hs_ita.attribute</field>
+            <field name="arch" type="xml">
+                <form string="Attribute">
+                    <group name="group_top">
+                        <group>
+                            <field name="name"/>
+                            <field name="value"/>
+                            <field name="category_id"/>
+                        </group>
+                        <group>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group name="group_log_access">
+                        <group>
+                            <field name="create_date" readonly="1"/>
+                            <field name="create_uid" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="write_date" readonly="1"/>
+                            <field name="write_uid" readonly="1"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="attribute_view_filter" model="ir.ui.view">
+            <field name="name">attribute.filter</field>
+            <field name="model">hs_ita.attribute</field>
+            <field name="arch" type="xml">
+                <search string="Attributes">
+                    <field name="name"/>
+                    <field name="value"/>
+                    <field name="category_id"/>
+                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                </search>
+             </field>
+        </record>
+        <record id="attribute_action" model="ir.actions.act_window">
+            <field name="name">Attributes</field>
+            <field name="res_model">hs_ita.attribute</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="attribute_menu" name="Attributes"
+                  parent="setting_menu" action="attribute_action"
+                  sequence="3"/>
+
+        <record id="location_view_tree" model="ir.ui.view">
+            <field name="name">location.tree</field>
+            <field name="model">hs_ita.location</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" delete="false">
+                    <field name="name"/>
+                    <field name="parent_id"/>
+                    <field name="note" widget="char"/>
+                    <field name="complete_name"/>
+                    <field name="sequence"/>
+                </tree>
+            </field>
+        </record>
+        <record id="location_view_form" model="ir.ui.view">
+            <field name="name">location.form</field>
+            <field name="model">hs_ita.location</field>
+            <field name="arch" type="xml">
+                <form string="Location">
+                    <group name="group_top">
+                        <group>
+                            <field name="name"/>
+                            <field name="parent_id"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group>
+                            <field name="complete_name"/>
+                            <field name="note"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group name="group_log_access">
+                        <group>
+                            <field name="create_date" readonly="1"/>
+                            <field name="create_uid" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="write_date" readonly="1"/>
+                            <field name="write_uid" readonly="1"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+        <record id="location_view_filter" model="ir.ui.view">
+            <field name="name">location.filter</field>
+            <field name="model">hs_ita.location</field>
+            <field name="arch" type="xml">
+                <search string="Locations">
+                    <field name="name"/>
+                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                </search>
+             </field>
+        </record>
+        <record id="location_action" model="ir.actions.act_window">
+            <field name="name">Locations</field>
+            <field name="res_model">hs_ita.location</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="location_menu" name="Locations"
+                  parent="setting_menu" action="location_action"
+                  sequence="4"/>
+
+        <record id="count_view_tree" model="ir.ui.view">
+            <field name="name">count.tree</field>
+            <field name="model">hs_ita.count</field>
+            <field name="arch" type="xml">
+                <tree string="Counts">
+                    <field name="name"/>
+                    <field name="plan_date"/>
+                    <field name="state"/>
+                    <field name="item_qty"/>
+                </tree>
+            </field>
+        </record>
+        <record id="count_view_form" model="ir.ui.view">
+            <field name="name">count.form</field>
+            <field name="model">hs_ita.count</field>
+            <field name="arch" type="xml">
+                <form string="Count">
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" placeholder="Asset Count Subject"/>
+                            </h1>
+                            <label for="plan_date" class="oe_edit_only"/>
+                            <field name="plan_date"/>
+                            <label for="state" class="oe_edit_only"/>
+                            <field name="state"/>
+                            <label for="note" class="oe_edit_only"/>
+                            <field name="note"/>
+                        </div>
+                        <notebook>
+                            <page string="Count Items">
+                                <field name="item_ids"/>
+                            </page>
+                        </notebook>
+                        <group name="group_log_access">
+                            <group>
+                                <field name="create_date" readonly="1"/>
+                                <field name="create_uid" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="write_date" readonly="1"/>
+                                <field name="write_uid" readonly="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="count_action" model="ir.actions.act_window">
+            <field name="name">Counts</field>
+            <field name="res_model">hs_ita.count</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="count_menu" name="Counts"
+                  parent="asset_management_menu" action="count_action"
+                  sequence="2"/>
+
+        <record id="count_item_view_tree" model="ir.ui.view">
+            <field name="name">count.item.tree</field>
+            <field name="model">hs_ita.count.item</field>
+            <field name="arch" type="xml">
+                <tree string="Count Items">
+                    <field name="asset_id"/>
+                    <field name="state"/>
+                    <field name="employee_id"/>
+                    <field name="count_date"/>
+                </tree>
+            </field>
+        </record>
+        <record id="count_item_view_form" model="ir.ui.view">
+            <field name="name">count.item.form</field>
+            <field name="model">hs_ita.count.item</field>
+            <field name="arch" type="xml">
+                <form string="Count Item">
+                    <group name="group_top">
+                        <group>
+                            <field name="asset_id"/>
+                            <field name="state"/>
+                            <field name="employee_id"/>
+                            <field name="count_date"/>
+                        </group>
+                        <group>
+                            <field name="note"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="count_wizard_view" model="ir.ui.view">
+            <field name="name">count.wizard</field>
+            <field name="model">hs_ita.count.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Count Wizard">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="plan_date"/>
+                        </group>
+                        <group>
+                            <field name="note"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Assets">
+                            <field name="asset_ids"/>
+                        </page>
+                    </notebook>
+                    <footer>
+                        <button type="object" name="create_count" string="Create" class="oe_highlight"/>
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <act_window id="count_wizard_action" name="Count Wizard" src_model="hs_ita.asset"
+                    res_model="hs_ita.count.wizard" view_mode="form" target="new" multi="True" />
+
+        <report id="hr_employee_hs_ita_asset_report"
+                string="Employee IT Assets Report"
+                model="hr.employee"
+                report_type="qweb-html"
+                name="hs_ita.employee_hs_ita_asset_report_template"/>
+    </data>
+</openerp>
